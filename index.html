@@ -7,7 +7,7 @@
 
   <title>Second South American NLP School</title>
 
-  <style>
+  <style> 
 
     body {
       margin: 0;
@@ -17,12 +17,17 @@
       line-height: 1.6;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     header {
       background-color: #ffffff;
       border-bottom: 1px solid #dddddd;
       padding: 15px 40px;
       position: sticky;
       top: 0;
+      z-index: 10;
     }
   .photo {
       width: 140px;
@@ -32,7 +37,7 @@
       overflow: hidden; /* esto es importante */
       background: #d9d9d9; /* fallback si no hay imagen */
     }
-
+    
     .photo img {
       width: 100%;
       height: 100%;
@@ -44,6 +49,7 @@
       justify-content: flex-end;
       gap: 35px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -99,6 +105,25 @@
       padding: 0 30px;
     }
 
+    .schedule-notice {
+      max-width: 1100px;
+      margin: 20px auto 0;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #0f766e, #2563eb);
+      border: 1px solid #075985;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .schedule-notice a {
+      color: #ffffff;
+      text-decoration-color: #facc15;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
     section {
       margin-bottom: 60px;
     }
@@ -122,12 +147,264 @@
       text-align: center;
     }
 
+    .schedule-table-wrapper {
+      overflow-x: auto;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+    }
+
+    .schedule-table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .schedule-table th {
+      background: #f7f7f7;
+      font-weight: 600;
+    }
+
+    .schedule-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .schedule-time {
+      width: 16%;
+      white-space: nowrap;
+      color: #555;
+    }
+
+    .schedule-locations {
+      margin: 20px 0;
+      padding: 16px 18px;
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      border-radius: 4px;
+    }
+
+    .schedule-locations p {
+      margin: 0 0 8px;
+    }
+
+    .schedule-locations p:last-child {
+      margin-bottom: 0;
+    }
+
+    .schedule-locations small {
+      margin-left: 6px;
+    }
+
+    .status-badge {
+      display: inline-block;
+      margin-left: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.5em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      vertical-align: middle;
+      background: #fee2e2;
+      color: #b91c1c;
+      border: 1px solid #fca5a5;
+    }
+
+    details {
+      cursor: pointer;
+    }
+
+    details summary {
+      font-weight: 600;
+    }
+
+    .event-details > summary {
+      color: #1d4ed8;
+    }
+
+    .event-details[open] > summary {
+      margin-bottom: 10px;
+    }
+
+    .event-details-content {
+      margin-top: 10px;
+      padding: 12px;
+      background: #f7f7f7;
+      border-left: 3px solid #bdbdbd;
+    }
+
+    .event-details-content p {
+      margin: 0 0 8px;
+    }
+
+    .event-details-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .event-type {
+      color: #222;
+    }
+
+    .editable-field:empty::before {
+      content: attr(data-placeholder);
+      color: #777;
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .event-title:empty::before {
+      margin-left: 4px;
+    }
+
+    .speaker-label {
+      margin-top: 12px !important;
+      font-weight: 600;
+    }
+
+    .panelist-list {
+      margin: 6px 0 0;
+      padding-left: 20px;
+    }
+
+    .panelist-list li {
+      margin: 3px 0;
+    }
+
+    .speaker-details,
+    .speaker-card-details {
+      margin-top: 8px;
+      border: 1px solid #dddddd;
+      border-radius: 4px;
+      background: #ffffff;
+    }
+
+    .speaker-details summary,
+    .speaker-card-details summary {
+      padding: 7px 10px;
+      color: #1d4ed8;
+    }
+
+    .speaker-bio {
+      padding: 0 10px 10px;
+      color: #444;
+    }
+
+    .speaker-card-details .speaker-bio:not(.confirmed-bio) {
+      display: none;
+    }
+
+    .pending-bio {
+      margin: 0;
+      padding: 0 10px 10px;
+      color: #666;
+      font-style: italic;
+    }
+
+    .speaker-card-details {
+      margin: 10px auto 0;
+      max-width: 180px;
+      text-align: left;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      nav {
+        justify-content: flex-start;
+        gap: 12px 20px;
+      }
+
+      .hero,
+      .content {
+        padding: 0 20px;
+      }
+
+      .schedule-notice {
+        margin: 15px 20px 0;
+        padding: 12px 15px;
+      }
+    }
+
     .photo {
       width: 140px;
       height: 140px;
       background: #d9d9d9;
       border-radius: 50%;
       margin: auto;
+    }
+
+    .poster-day-details {
+      margin-bottom: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+      background: #ffffff;
+    }
+
+    .poster-day-details > summary {
+      padding: 14px 18px;
+      font-size: 1.15em;
+      color: #1d4ed8;
+    }
+
+    .poster-day-details[open] > summary {
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .poster-table-wrapper {
+      overflow-x: auto;
+    }
+
+    .poster-table {
+      width: 100%;
+      min-width: 640px;
+      border-collapse: collapse;
+    }
+
+    .poster-table th,
+    .poster-table td {
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .poster-table th {
+      background: #f7f7f7;
+      font-weight: 600;
+    }
+
+    .poster-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .poster-order {
+      width: 8%;
+      white-space: nowrap;
+      color: #555;
+    }
+
+    .poster-presenter {
+      width: 22%;
+    }
+
+    .poster-title-details summary {
+      color: #1d4ed8;
+      font-weight: normal;
+    }
+
+    .poster-abstract {
+      margin-top: 8px;
+      color: #444;
+      white-space: pre-line;
     }
 
     footer {
@@ -149,28 +426,39 @@
     <nav>
       <a href="#about">About</a>
       <a href="#registration">Registration</a>
-      <a href="#dates">Important Dates</a>
-      <a href="#program">Program</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#posters">Poster Sessions</a>
       <a href="#past">Past Editions</a>
     </nav>
 
   </header>
 
+  <div class="schedule-notice" role="status">
+    <a href="#schedule">The schedule is now available.</a> Click any talk or tutorial, then a speaker name, to explore the details.
+  </div>
+
   <div class="hero">
 
     <h1>Second South American NLP School</h1>
 
+    <div class="subtitle">
+      Natural Language Processing and AI in South America
+    </div>
 
-
-
+    
 
     <div class="dates">
-      <strong>Date:</strong> August 3–4, 2026,  right after
-      <a href="https://eci.dc.uba.ar/" target="_blank">ECI 2026</a> <br>
-   	  <strong>Place:</strong> <a href="https://www.dc.uba.ar/" target="_blank">Department of Computer Science</a>, <a href="https://www.uba.ar/" target="_blank" rel="noopener noreferrer">
-  Universidad de Buenos Aires</a>,   Buenos Aires, Argentina<br>
+      August 3–4, 2026<br>
+      Buenos Aires, Argentina<br>
+      Location: <a href="https://maps.app.goo.gl/wSvUPiBqukuuJBr8A" target="_blank" rel="noopener noreferrer">Ciudad Universitaria — Pabellones 0 and I</a><br>
+      right after
+      <a href="https://eci.dc.uba.ar/" target="_blank">ECI 2026</a>
+      at the
+      <a href="https://www.dc.uba.ar/" target="_blank">
+    Department of Computer Science </a>, <a href="https://www.uba.ar/" target="_blank" rel="noopener noreferrer">
+  Universidad de Buenos Aires
 </a>
-
+ 
 </div>
     <div class="banner" >
 
@@ -186,7 +474,9 @@
       <h2>About</h2>
 
       <p>
-        This two-day regional NLP school, organized right after ECI 2026, is a joint effort between the Department of Computer Science (FCEN, Universidad de Buenos Aires), the Instituto de Ciencias de la Computación (ICC, CONICET-Universidad de Buenos Aires), Argentina; the Natural Language Processing Group at Instituto de Computación (Facultad de Ingeniería, Universidad de la República), Uruguay; and the Natural Language Processing Group at Facultad de Matemática, Astronomía, Física y Computación (Universidad Nacional de Córdoba), Argentina. The school will feature lectures by NLP researchers, tutorials and poster sessions, focused on Natural Language Processing and its applications in Artificial Intelligence. </p>
+        This two-day regional NLP school, organized right after ECI 2026, is a joint effort between the Instituto de Investigación en Ciencias de la Computación (ICC, CONICET-Universidad de Buenos Aires), the Natural Language Processing Group at Instituto de Computación (Facultad de Ingeniería, Universidad de la República), Uruguay;  Argentina; and the Natural Language Processing Group at Facultad de Matemática, Astronomía, Física y Computación (Universidad Nacional de Córdoba), Argentina. </p>
+
+      <p><strong>The school will feature lectures by NLP researchers, workshops and poster sessions, focused on Natural Language Processing and its applications in Artificial Intelligence.</strong></p>
 
  <p>The target audience includes graduate and undergraduate students in NLP-related fields, researchers, industry professionals, and anyone interested in Natural Language Processing and Artificial Intelligence. </p>
 
@@ -194,15 +484,15 @@
 
  <p>The initiative seeks to strengthen the Latin American AI ecosystem by creating opportunities for interaction, learning, and collaboration in a region where in-person exchange opportunities are often limited. It aims to bring together students, researchers, and professionals from different countries to foster regional connections, facilitate the exchange of ideas, and support collaborative work in NLP and related areas.  </p>
 
+      
 
-
-
+   
 
     </section>
 
     <section id="registration">
 
-      <h2>Registration</h2>
+      <h2>Registration <span class="status-badge">Closed</span></h2>
 
       <p>
         If you are interested in attending our school, please <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-QCAEMoKZ9TtyQkX2x2TIiiFk53QD7JSDsCZMPbIkWjzPNw/viewform?usp=dialog">fill out this form</a>. Please check the <a href="#dates">important dates</a> for the application deadline. Applications will be reviewed and selected according to available capacity.
@@ -210,15 +500,769 @@
 
     </section>
 
-    <section id="program">
+    <section id="schedule">
 
-      <h2>Program</h2>
+      <h2>Schedule</h2>
 
       <p>
-        The program will include invited talks, tutorials, and poster sessions. More information will be available soon.
+        The following schedule is tentative. Speaker names are confirmed; talk and tutorial titles will be added as they become available.
       </p>
 
+      <div class="schedule-locations">
+        <p>
+          <strong>Talks and panel:</strong> Aula Magna, Pabellon I.
+          <small><a href="https://www.google.com/maps/place/Ciudad+Universitaria+-+UBA+-+Pabell%C3%B3n+I/@-34.5443738,-58.4420326,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb44807e06b45:0xc381a39ad7639356!8m2!3d-34.5443738!4d-58.4394577!16s%2Fg%2F11bw7d7sn1?entry=ttu&amp;g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></small>
+        </p>
+        <p><strong>Tutorials:</strong> Room 1209, Pabellon 0, located next to Pabellon I.</p>
+      </div>
+
+      <div class="schedule-table-wrapper">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th scope="col">Monday, August 3</th>
+              <th scope="col">Activity</th>
+              <th scope="col">Tuesday, August 4</th>
+              <th scope="col">Activity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="schedule-time">9:00–9:30</td>
+              <td>Welcome</td>
+              <td class="schedule-time">9:00–9:30</td>
+              <td>Welcome</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">9:30–10:30</td>
+              <td><span class="event-type">Talk —</span> Enzo Ferrante</td>
+              <td class="schedule-time">9:30–11:00</td>
+              <td>
+                <details class="event-details">
+                  <summary><span class="event-type">Panel &mdash;</span> Working in Industry and AI</summary>
+                  <div class="event-details-content">
+                    <p class="speaker-label">Panelists</p>
+                    <ul class="panelist-list">
+                      <li>Monica Bobrowski</li>
+                      <li>Agust&iacute;n Mosteiro</li>
+                      <li>Nicol&aacute;s D'Ippolito</li>
+                      <li>Fernando Schapachnik</li>
+                    </ul>
+                  </div>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="schedule-time">10:30–11:30</td>
+              <td>Coffee break + Poster Session 1</td>
+              <td class="schedule-time">11:00–11:30</td>
+              <td>Coffee break + Poster Session 2</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">11:30–12:30</td>
+              <td><span class="event-type">Talk —</span> Valentín Barriere</td>
+              <td class="schedule-time">11:30–12:30</td>
+              <td><span class="event-type">Talk —</span> Luciana Ferrer</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">12:30–14:00</td>
+              <td>Lunch + continuation of Poster Session 1</td>
+              <td class="schedule-time">12:30–14:30</td>
+              <td>Lunch + continuation of Poster Session 2</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">14:00–15:15</td>
+              <td>
+                <details class="event-details">
+                  <summary><span class="event-type">Tutorial —</span> Luciana Benotti, Guido Ivetta</summary>
+                  <div class="event-details-content">
+                    <p class="speaker-label">Title</p>
+                    <p>Evaluación sociocultural de modelos de lenguaje</p>
+                    <p class="speaker-label">Description</p>
+                    <p>Este taller teórico-práctico aborda la evaluación de sesgos sociales, estereotipos y el uso de expresiones típicas locales en modelos de lenguaje. Examinaremos cómo los modelos de lenguaje asocian atributos a diferentes identidades, apoyándonos en investigaciones de nuestro equipo en la Universidad Nacional de Córdoba. Analizaremos los datos recolectados durante la misma sesión, pondremos a prueba experimentos de evaluación empírica y exploraremos cómo responden los modelos ante frases propias de nuestra región, investigando si estas particularidades lingüísticas y culturales se convierten en una fuente de alucinaciones.</p>
+                  </div>
+                </details>
+              </td>
+              <td class="schedule-time">14:30–15:45</td>
+              <td><span class="event-type">Tutorial —</span> Guillermo Moncecchi, Ignacio Sastre</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">15:15–15:45</td>
+              <td>Coffee break</td>
+              <td class="schedule-time">15:45–16:15</td>
+              <td>Coffee break</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">15:45–17:00</td>
+              <td>Continuation of the tutorial</td>
+              <td class="schedule-time">16:15–17:30</td>
+              <td>Continuation of the tutorial</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </section>
+
+    <section id="posters">
+
+      <h2>Poster Session</h2>
+
+      <p>
+        Over both days, posters on NLP applied to different research areas will be presented. Similar topics are grouped under a similar order number. On its corresponding day, each poster is shown alongside its order number, in case you'd like to check out ahead of time which ones interest you!
+      </p>
+
+      <details class="poster-day-details">
+        <summary>Poster Session Day 1</summary>
+      <div class="poster-table-wrapper">
+        <table class="poster-table">
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Presenter</th>
+              <th scope="col">Poster title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="poster-order">1</td>
+              <td class="poster-presenter">Gian Carlo Orcotoma Mormontoy</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Hacia la creación de un corpus paralelo quechua collao–español mediante Reconocimiento Óptico de Caracteres (OCR)</summary>
+                  <p class="poster-abstract">El idioma quechua constituye un elemento fundamental de la identidad social y cultural del Perú, y posee una gran relevancia lingüística y cultural. Sin embargo, enfrenta importantes desafíos en términos de representación digital. Una de las principales limitaciones es la escasez de recursos, como los corpus paralelos, lo que restringe el desarrollo de herramientas tecnológicas para su análisis y aplicación práctica.
+
+Este estudio aborda dicha brecha mediante una metodología para la construcción de un corpus paralelo utilizando Reconocimiento Óptico de Caracteres (OCR). Se digitalizó una colección de textos de origen común con el fin de crear un corpus que permita un acceso confiable a la información. El corpus resultante constituye un recurso valioso tanto para la investigación lingüística y el Procesamiento del Lenguaje Natural (PLN) como para los hablantes de quechua.
+
+El material fuente proviene de obras elaboradas por egresados de la Academia Mayor de la Lengua Quechua y validadas por su personal académico, lo que garantiza la integridad gramatical, sintáctica y semántica de los textos.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">2</td>
+              <td class="poster-presenter">Leonardo Aluhe Correa</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Hacia una Womb Grammar para el Mapuche</summary>
+                  <p class="poster-abstract">Se busca, mediante el uso de Womb Grammars, crear una gramática para las frases nominales de la lengua Mapuche. Una Womb Grammar nos permite obtener una gramática para una lengua objetivo poco estudiada a partir de una lengua origen bien estudiada. Requiere 3 entradas críticas: Un corpus de oraciones bien escritas en la lengua objetivo, el léxico correspondiente para su comprención, y las reglas sintácticas de la lengua origen.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">3</td>
+              <td class="poster-presenter">Stephanny Gabriela Sánchez Bautista</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Empowering Marginalized Communities via Low-Resource Language Interfaces: A Domain-Specific RAG Approach for Household Maintenance</summary>
+                  <p class="poster-abstract">Technical maintenance knowledge remains largely inaccessible to non expert users in the Global South due to high costs and linguistic barriers, disproportionately affecting women and leading to premature electronic waste. We propose an intelligent multimodal framework that leverages Language Understanding and Retrieval-Augmented Generation (RAG) to democratize household appliance repair. To ensure inclusivity for populations where oral tradition and indigenous languages prevail, we integrate a low-resource speech interface designed to support Quechua and colloquial Peruvian Spanish. Our system enables users to describe appliance failures, specifically microwave ovens—via text and voice, which are then processed through a pipeline of multilingual BERT-based embeddings and FAISS vector search.We introduce a multi-model evaluation pipeline comparing four architectures: distiluse-base-multilingual, paraphrase-multilingual-MiniLM, sentence-similarity-spanish, and mpnet-base under identical conditions. A domain-specific fine-tuning strategy was applied to a curated dataset of 1,000 annotated failure cases, reflecting formal, technical, and colloquial registers. Experimental results demonstrate that the fine-tuned model achieves a gain in precision, accuracy and MRR scores, with a query latency under 100ms. By bridging advanced RAG architectures with low-resource speech capabilities, this work empowers marginalized communities to perform safe repairs, fostering both linguistic inclusivity and circular economy practices in real-world, multilingual contexts.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">4</td>
+              <td class="poster-presenter">Paola Cúneo</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>QomL’aqtaqa. A Qom-Spanish Parallel Corpus for Natural Language Processing, with a Machine Translation Baseline</summary>
+                  <p class="poster-abstract">Qom, a language of the Guaycuruan family, is a low-resource language for NLP and
+speech processing. We present the first parallel Qom–Spanish corpus in a computationally
+usable format, comprising 33,392 parallel segments, totaling 1,469,905 Qom tokens and
+891,344 Spanish tokens. A subset of 2,943 segments excludes Bible-derived content. It
+includes alignments at different levels: sentences, sentence fragments, and paragraphs,
+and is compiled from multiple sources, both previously available and newly collected. We
+also present bidirectional neural machine translation baselines based on NLLB-200, achieving competitive performance in both translation directions on the full dataset, and lower performance on the non-Bible subset. An ablation study shows that training exclusively on biblical data reduces performance on non-biblical text, highlighting the importance of domain diversity in low-resource machine translation.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">5</td>
+              <td class="poster-presenter">Paola Cúneo</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Lengua qom: Creación de un corpus de habla y de texto paralelo, sus aplicaciones y evaluación</summary>
+                  <p class="poster-abstract">Las lenguas indígenas constituyen un componente fundamental del entramado cultural y lingüístico de las comunidades que las hablan y de nuestro país. Sin embargo, muchas de estas lenguas enfrentan procesos de desplazamiento lingüístico y una limitada disponibilidad de recursos digitales que contribuyan a su documentación y fortalecimiento. En este contexto, la construcción de corpus lingüísticos digitales representa una herramienta valiosa tanto para potenciar el estudio de estas lenguas como para desarrollar tecnologías del lenguaje. 
+
+En este trabajo presentamos los avances en la construcción de un corpus de habla y texto en lengua qom, orientado al desarrollo de recursos y tecnologías que contribuyan a su uso, fortalecimiento y continuidad. En su estado actual, el corpus reúne aproximadamente 5 horas de grabaciones de habla de alta calidad, de las cuales 3 horas han sido transcriptas en qom y traducidas al español. Asimismo, presenta una amplia diversidad sociolingüística en términos de género, edad, variedad dialectal, así como de géneros discursivos y estilos de habla. Se describen las características del corpus y la metodología empleada para la recolección y anotación de los datos, incluida la labor colaborativa desarrollada junto con la comunidad indígena. Finalmente, se analizan los principales desafíos enfrentados durante el proceso y las perspectivas de utilización del corpus en futuras aplicaciones de procesamiento del lenguaje natural y tecnologías del habla.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">6</td>
+              <td class="poster-presenter">Macarena Fernandez Urquiza</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Evaluation Metrics for Qom↔Spanish Machine Translation: Baselines, Limitations, and a Roadmap</summary>
+                  <p class="poster-abstract">Evaluating machine translation for low-resource Indigenous languages poses challenges that standard n-gram-based metrics are not designed to handle: polysynthetic morphology, non-standardized orthography, and scarce digital resources. The first shared task on translation metrics for Indigenous languages, held at the AmericasNLP 2025 workshop, showed that ChrF++—the current standard—correlates poorly with human judgments for these languages (average Pearson correlation ~0.52 across three languages), while the best neural approaches reach ~0.67, revealing both the potential and the limitations of existing methods.
+This work extends the investigation to the Qom↔Spanish pair. Qom is a Guaycuruan polysynthetic language of northern Argentina with orthographic variation and still-emerging digital resources. An existing translation model (fine-tuned NLLB) is evaluated using n-gram metrics (BLEU, ChrF++) and pretrained multilingual embedding-based metrics (BERTScore, MoverScore), and cases where metrics diverge from actual translation quality are qualitatively analyzed. Building on these findings, an annotation guideline is proposed, adapted to the linguistic and sociocultural specificities of Qom—following the semantics/fluency evaluation methodology of the AmericasNLP shared task 3 —alongside a roadmap toward embedding-based metrics trained on the Qom-Spanish pair.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">7</td>
+              <td class="poster-presenter">Ignacio Giuliano Iannello</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Evaluación de la Comprensión Semántica en la traducción de LSA-T</summary>
+                  <p class="poster-abstract">El Lenguaje de Señas Argentino (LSA) tiene características que lo diferencian de otros lenguajes de señas como el lenguajes de señas americano (ASL) o el lenguaje de señas chino (CSL) las cuales tienen diferencias tanto en el significado de diferentes gestos como tambien asi en su estructura gramatical (El LSA utiliza Objeto-Sujeto-Verbo mientras que ASL usa Sujeto-Verbo-Objeto). En nuestro país alrededor de 70.000 personas se comunican a través del lenguaje de señas. Esto es un indicador de la importancia de adaptar o generar instrumentos que puedan ser traducidos satisfactoriamente.
+Bratti[1] presenta un modelo entrenado en LSA-T que reporta un BLEU-1 de ~9%.  Testa et al. [2] pusieron a disposición  un pipeline automático para generar un benchmark que evalúa para los datasets PHOENIX y CSL-Daily. El poster propuesto mostrará los resultados de reproducir el pipeline propuesto por [2] para un modelo entrenado en LSA-T, centrado en la evaluación de la precisión de Comprensión de Lenguaje de Señas (Sign Language Understanding).
+[1] Bratti, Juan “Traducción de secuencias de la lengua de señas argentina mediante visión por computadora”, Tesis de grado, FAMAF, UNC. Dic 2025,  https://rdu.unc.edu.ar/items/26462320-e56d-40f2-a4cf-877bc67be5d7
+[2]  Zeno Testa, Antonino Furnari, Lorenzo Baraldi, and Natalia Díaz-Rodríguez,  &quot;SLU-2K: A Question-Based Benchmark for Semantic Evaluation of Sign Language Translation&quot;.https://arxiv.org/abs/2606.03788v1</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">8</td>
+              <td class="poster-presenter">Tadeo Kaufmann</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>De España al Río de la Plata: brecha dialectal y benchmarks NLU para el español rioplatense</summary>
+                  <p class="poster-abstract">El español rioplatense, hablado por más de 45 millones de personas en Argentina y Uruguay, está prácticamente ausente de los benchmarks de comprensión del lenguaje natural. Los modelos entrenados en español estándar peninsular no han sido evaluados sistemáticamente en esta variedad, y la evidencia sugiere que la distancia dialectal tiene costos reales en rendimiento.
+
+Presento dos contribuciones: XNLIrp, la primera adaptación del benchmark XNLI al español rioplatense (7.500 instancias,validadas por 339 anotadores nativos con 84,2% de aprobación), y QA-Cuentos ET, el primer dataset de selección de oraciones respuesta
+en rioplatense (8.940 instancias) construido sobre el corpus de eye-tracking Cuentos ET. Con estos recursos evaluamos la brecha dialectal en BETO y mDeBERTa en tres condiciones (ES→ES, ES→RP, RP→RP) y a su vez analizamos si las señales de eye-tracking de lectores nativos rioplatenses mejoran el rendimiento en esa variedad.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">9</td>
+              <td class="poster-presenter">Juan Miguel Vásquez Aguilar</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>PyPodcast: A Python Library for Computational Conversational Analysis of Podcasts</summary>
+                  <p class="poster-abstract">Siguiendo el trabajo de Zhang et al. (https://aclanthology.org/P18-1125.pdf), presentamos esta biblioteca de Python que permite realizar análisis conversacional de podcasts. La biblioteca permite descargar episodios de audio de fuentes abiertas, generar transcripciones de los episodios, asignar etiquetas de participantes a cada turno en las conversaciones, generar diversas características para analizar fenómenos sociolingüísticos a partir de datos conversacionales, obtener métricas del corpus, así como asignar distintas etiquetas de sentimiento y polaridad. La biblioteca esta optimizada para correr secuencial o paralelamente en ambientes con uno o múltiples GPUs (Nvidia y Apple Silicon).</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">10</td>
+              <td class="poster-presenter">Nicolás Rubinstein</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Nexo-Memoria: un grafo de conocimiento para la Memoria, Verdad y Justicia</summary>
+                  <p class="poster-abstract">Se trata de un grafo de conocimiento que modela información extraída de sentencias judiciales por crímenes de lesa humanidad cometidos durante la última dictadura cívico-militar en Argentina (1976–1983). La información se extrae mediante un pipeline de extracción con LLMs y componentes determinísticos en múltiples pasos.
+
+El dominio presenta desafíos específicos para el NLP: normalización de expresiones temporales y espaciales imprecisas en español, resolución de entidades y coreferencia cross-documento, extracción de información en textos jurídicos extensos, y confiabilidad de las extracciones con trazabilidad a la fuente.
+
+La solución se apoya en una ontología propia diseñada para ser interoperable con otras fuentes de información, una arquitectura de grafo híbrido (RDF + Neo4j) que separa la fuente de verdad semántica de la proyección operacional, y un agente conversacional que traduce preguntas en lenguaje natural a consultas SPARQL y Cypher. Cada tripleta preserva trazabilidad a nivel de fragmento hasta el documento fuente, y una interfaz de revisión permite a expertos del dominio validar y corregir los datos extraídos.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">11</td>
+              <td class="poster-presenter">Adrián Fernando Acarapi Roca</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Evaluación dinámica de una arquitectura multi agentes bajo logica difusa</summary>
+                  <p class="poster-abstract">El presente trabajo busca evaluar y modelar matemáticamente el uso eficiente de comunicación entre agentes para la segregación óptima de responsabilidades, entre una arquitectura on premise y modelos corriendo en la nube para determinar la eficacia de un cambio dinámico de responsabilidades bajo la lógica difusa</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">12</td>
+              <td class="poster-presenter">Axel Sirota</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Agent to Agent de una manera escalable</summary>
+                  <p class="poster-abstract">En el momento de escalar un sistema de agentes de pares a decenas surgen varios problemas de concurrencia y escalabilidas. Investigamos potenciales soluciones al problema de escalabilidad de agentes en modo swarm</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">13</td>
+              <td class="poster-presenter">Lesly Zerna</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Optimización de Agentes basados en Modelos Abiertos: Un caso de estudio con Gemma</summary>
+                  <p class="poster-abstract">El despliegue de sistemas basados en agentes de Procesamiento del Lenguaje Natural (PLN) en entornos de producción enfrenta desafíos críticos de ingeniería que rara vez se abordan en la literatura introductoria: la latencia de inferencia, la acumulación de estado en el contexto y las restricciones en el manejo de dependencias de texto estructurado.
+
+Este trabajo presenta un estudio de caso práctico centrado en el diseño y la optimización de un sistema multi-agente utilizando la familia de modelos lingüísticos abiertos Gemma. Evaluamos el impacto de diferentes patrones de orquestación y arquitecturas de enrutamiento sobre el tiempo de respuesta y la eficiencia en el consumo de tokens en tareas complejas de procesamiento de texto. Adicionalmente, analizamos estrategias de gestión de estado mediante la compresión y poda del historial de conversación para mitigar la saturación del contexto.
+
+El objetivo es demostrar cómo la transición de prototipos educativos a arquitecturas robustas de PLN puede lograrse utilizando modelos de código abierto viables, locales y eficientes, proporcionando un marco de referencia reproducible y de bajo costo para desarrolladores e investigadores de la región.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">14</td>
+              <td class="poster-presenter">Favio Di Ciocco</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Propagation of correlated rumors in a threshold model</summary>
+                  <p class="poster-abstract">Social media platforms bombard users with vast amounts of information, often exceeding individual cognitive processing capacities. In contexts where forming an informed opinion is costly, individuals tend to rely on social reinforcement, validating information only if it is confirmed by their local environment. In this work, we study the propagation of unverified information (rumors) in complex networks, focusing on a scenario with two competing rumors regarding a single topic: one positive and one negative. We introduce a mechanism where these rumors are correlated, such that the adoption of one facilitates the adoption of the other. However, since the rumors represent opposing views, agents who accept both encounter a state of cognitive dissonance. This conflict is eventually resolved by discarding both beliefs and adopting a stricter criterion (higher threshold) for accepting future information. Our model revealed two distinct parameter regions: one where a single rumor dominates, and another where most agents become skeptical. A proposed dynamical description, when integrated, showed similar behavior to the original model.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">15</td>
+              <td class="poster-presenter">Giuliano Crenna</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>El indice V para la evaluación ecológica de los grandes modelos del lenguaje</summary>
+                  <p class="poster-abstract">El poster trata sobre el desarrollo de un indicador para evaluar integralmente el impacto ecológico en la fase de decoding de un modelo del lenguaje.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">16</td>
+              <td class="poster-presenter">Eric Lützow Holm</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Casa o árbol: una propuesta lúdica para acercarse al NLP</summary>
+                  <p class="poster-abstract">En este trabajo presentamos “Casa o árbol”, una actividad lúdica diseñada para introducir de forma intuitiva y visual los conceptos de embeddings y distancia semántica en estudiantes de último año de nivel secundario. El juego consiste en juntarse en grupos y adivinar una palabra secreta mediante una cadena secuencial de opciones binarias (ej. de &quot;casa o árbol&quot; a &quot;árbol o gato&quot; hasta aproximarse al objetivo). Utilizando los datos recolectados por los propios alumnos en un formulario online, programamos en vivo para mapear las partidas computando los embeddings de las palabras jugadas. Esto nos permite generar gráficos que muestran cómo la distancia semántica tiende a decrecer a lo largo de los turnos. Asimismo, analizamos el impacto del priming léxico mediante la lectura de un cuento corto previo al juego, evidenciando estadísticamente cómo las palabras de ese texto condicionan el vocabulario de los estudiantes empleado en las partidas.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">17</td>
+              <td class="poster-presenter">Luis Jeronimo Loera Moreno</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>SEONIA: Procesamiento de Lenguaje Natural y Generación Aumentada por Recuperación (RAG) para la Educación Inclusiva</summary>
+                  <p class="poster-abstract">El proyecto SEONIA aplica técnicas avanzadas de Procesamiento de Lenguaje Natural (PLN) para crear entornos educativos verdaderamente inclusivos y personalizados. Mediante la integración de sistemas de Inteligencia Artificial agéntica y arquitecturas de Generación Aumentada por Recuperación (RAG), la plataforma analiza, simplifica y reestructura materiales didácticos estandarizados para adaptarlos a los requerimientos cognitivos de cada estudiante. El trabajo expone el flujo de procesamiento semántico, la optimización de modelos transformadores para la generación de contenido educativo, y demuestra cómo la comprensión del lenguaje natural (NLU) actúa como puente para superar barreras de aprendizaje en la educación moderna.</p>
+                </details>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </details>
+
+      <details class="poster-day-details">
+        <summary>Poster Session Day 2</summary>
+      <div class="poster-table-wrapper">
+        <table class="poster-table">
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Presenter</th>
+              <th scope="col">Poster title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="poster-order">1</td>
+              <td class="poster-presenter">Carlos Israel Jimenez J</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Apu: procesamiento privado de datos clínicos sensibles mediante cifrado homomórfico (FHE)</summary>
+                  <p class="poster-abstract">Este póster presenta Apu (Sensible Data Guardian), un prototipo desarrollado durante el Aleph Hackathon (2.º lugar) que explora una pregunta cada vez más relevante para la IA: ¿cómo procesar datos clínicos altamente sensibles sin exponerlos? La propuesta usa cifrado homomórfico completo (FHE) para realizar cálculos e inferencias directamente sobre datos cifrados, de modo que la información sensible nunca se descifra durante el procesamiento. Al tratarse de un proyecto de hackathon, Apu es una prueba de concepto más que un sistema validado: el objetivo del trabajo fue demostrar la viabilidad de la idea y mapear sus límites prácticos. El póster muestra la arquitectura del prototipo, las restricciones reales del FHE que encontramos (costo computacional y tipos de operaciones factibles), y discute su potencial relevancia para América Latina, donde la protección efectiva de datos personales sigue siendo un desafío. Finalmente, se plantean las preguntas abiertas y los posibles caminos para extender este enfoque hacia el procesamiento de lenguaje sobre texto clínico.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">2</td>
+              <td class="poster-presenter">Sofía Martinelli</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Tensions Between Biomedical Ethics Review and Responsible AI Research at a University Hospital in South America</summary>
+                  <p class="poster-abstract">This paper analyzes ethical and technical challenges of implementing Responsible LLMs in clinical settings, drawing on an ongoing interdisciplinary project in Uruguay. The project is being developed within the Centro Interdisciplinario en Ciencia de Datos y Aprendizaje Automático (CICADA, Universidad de la República) in collaboration with the Hospital de Clínicas, Uruguay’s main university hospital. The regional research team draws on expertise from computer science, medicine, and the social sciences to address questions about fairness, inclusion, and gender bias in AI systems.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">3</td>
+              <td class="poster-presenter">Margarita Ruiz Olazar</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Clasificación Automática de Diagnósticos de Salud Mental en Texto Clínico Libre mediante RigoBERTa Clinical: Depresión vs Ansiedad</summary>
+                  <p class="poster-abstract">En salud mental, las condiciones como la depresión y la ansiedad son las más prevalentes y representan un gran desafío para los sistemas de salud pública a nivel mundial. Actualmente, con el avance de la tecnología en muchas instituciones de salud, el registro electrónico (EHR) de las consultas clínicas se realiza en formato de texto narrativo. Esta tecnología resulta relevante para obtener información sobre los pacientes, las estrategias de tratamiento y su evolución clínica a lo largo del tiempo. A pesar de ello, estas historias clínicas siguen siendo un recurso poco utilizado para la investigación sistemática y el análisis de datos secundarios. En este trabajo presentamos un sistema de clasificación de diagnósticos de depresión y ansiedad a partir de relatos clínicos en texto libre, basado en el fine-tuning de RigoBERTa Clinical (PlanTL-GOB-ES/roberta-base-biomedical-clinical-es), un modelo RoBERTa preentrenado sobre un corpus biomédico y clínico en español. El estudio utiliza dos fuentes de datos de un servicio de salud mental de Paraguay: un dataset de consultas longitudinales (2021–2025, N &gt; 1835) con relatos clínicos en texto libre, y un conjunto de diagnósticos anotados por profesionales de la salud (depresión / ansiedad) empleado como ground truth para el entrenamiento supervisado. Como paso previo, se implementó un pipeline de anonimización automática del texto mediante modelos de lenguaje ejecutados localmente, sin enviar datos a servicios externos, lo que garantiza el cumplimiento de la Ley de Protección de Datos Personales. El modelo fine-tuneado alcanzó una accuracy de 80,93%, un AUC-ROC de 0,86 y un F1-score macro de 0,78, superando al baseline basado en reglas léxicas. El análisis por clase reveló una asimetría en el desempeño: mientras que la clase depresión obtuvo un F1 de 0,86, la clase ansiedad alcanzó un F1 de 0,70, lo que refleja el desbalance del dataset (256 vs 111 casos en el conjunto de evaluación) y la mayor ambigüedad lingüística de los relatos de ansiedad. Estos resultados demuestran la viabilidad de aplicar modelos de lenguaje clínico en español a datos reales de salud mental.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">4</td>
+              <td class="poster-presenter">Ignacio Gamez</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Mapeo de tabla de laboratorio al estandar LOINC</summary>
+                  <p class="poster-abstract">La interoperabilidad semántica entre sistemas de información en salud requiere la estandarización de terminologías locales hacia vocabularios controlados de referencia, como LOINC. En el sistema SIGEHOS, historia clínica electrónica del Gobierno de la Ciudad de Buenos Aires, las prácticas de laboratorio se registran bajo una nomenclatura propia, no estandarizada, lo que dificulta su comparación, análisis e interoperabilidad con otros sistemas. El mapeo manual de estas prácticas hacia LOINC representa una tarea costosa en tiempo y recursos especializados, dada la magnitud del catálogo de referencia.
+
+En este trabajo se propone un enfoque semiautomático basado en técnicas de procesamiento de lenguaje natural para asistir en dicho mapeo, con el objetivo de reducir el esfuerzo de etiquetado manual. El proceso consta de las siguientes etapas: (1) preprocesamiento y normalización textual de las descripciones de prácticas de SIGEHOS y de los términos LOINC; (2) generación de representaciones vectoriales (embeddings) semánticas de ambos conjuntos; (3) recuperación de los k vecinos más cercanos (KNN) en el espacio de embeddings, obteniendo un conjunto reducido de candidatos LOINC por cada práctica local; y (4) selección final mediante un modelo de lenguaje de gran escala (LLM), que evalúa los candidatos recuperados y determina el/los mapeos más adecuados, o indica la ausencia de correspondencia válida.
+
+Este enfoque transforma la tarea de búsqueda exhaustiva manual en un proceso de validación experta sobre un conjunto acotado de candidatos, con el potencial de acelerar significativamente el proceso de mapeo terminológico y facilitar su mantenimiento a futuro.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">5</td>
+              <td class="poster-presenter">Angela Lama Vargas</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Clasificación de estados cerebrales mediante características basadas en grafos extraídas de conectividad funcional EEG</summary>
+                  <p class="poster-abstract">Este estudio investiga el uso de características basadas en grafos extraídas de redes de conectividad funcional obtenidas a partir de señales EEG para la clasificación de estados cerebrales. Las redes de conectividad funcional se construyeron a partir de registros EEG en condiciones de ojos abiertos y ojos cerrados utilizando correlación de Pearson y fueron representadas como grafos. Se extrajeron diversas métricas topológicas que posteriormente se emplearon como variables de entrada para modelos de aprendizaje automático. Los resultados experimentales mostraron que las características basadas en grafos contienen información discriminativa para la clasificación de estados cerebrales. Los hallazgos sugieren que la asortatividad podría constituir un marcador sensible de la modulación asociada al estado ocular y que los clasificadores Random Forest basados en características de grafos pueden alcanzar un desempeño moderado en tareas de clasificación.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">6</td>
+              <td class="poster-presenter">Ramón Javier Igarreta</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>(Tentativo) Influencia del contexto global en el procesamiento de palabras ambiguas: un estudio con EEG y Eyetracking.</summary>
+                  <p class="poster-abstract">(A definir)</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">7</td>
+              <td class="poster-presenter">Tomás Schmidt</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Transformers guiados por atención humana: integración de eye-tracking para mejorar el entrenamiento y el desempeño de modelos de lenguaje</summary>
+                  <p class="poster-abstract">En este trabajo exploré si las señales de lectura humana pueden ayudar a entrenar mejor modelos de lenguaje en español. Para eso usé datos de eye-tracking, como el tiempo de fijación en palabras y el recorrido de la mirada durante la lectura.
+
+Probé dos formas de incorporar esta información en un modelo tipo BERT en español : una rama auxiliar basada en scanpaths y una modificación de la atención del Transformer usando métricas de lectura . La idea fue analizar si estas señales cognitivas podían guiar al modelo y aportar información útil para tareas de NLP.
+
+Los resultados muestran que el modelo logra incorporar debilmente parte de esta señal durante el entrenamiento.
+
+Este poster esta basado en mi tesis de licenciatura.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">8</td>
+              <td class="poster-presenter">Juan Pablo Muñoz</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>RTTC: Reward-Guided Collaborative Test-Time Compute</summary>
+                  <p class="poster-abstract">Test-Time Compute (TTC) has emerged as a powerful paradigm for enhancing the performance of Large Language Models (LLMs) at inference, leveraging strategies such as Test-Time Training (TTT) and Retrieval-Augmented Generation (RAG). However, the optimal adaptation strategy varies across queries, and indiscriminate application of TTC strategy incurs substantial computational overhead. In this work, we introduce Reward-Guided Test-Time Compute (RTTC), a novel framework that adaptively selects the most effective TTC strategy for each query via a pretrained reward model, maximizing downstream accuracy across diverse domains and tasks. RTTC operates in a distributed server-client architecture, retrieving relevant samples from a remote knowledge base and applying RAG or lightweight fine-tuning on client devices only when necessary. To further mitigate redundant computation, we propose Query-State Caching, which enables the efficient reuse of historical query states at both retrieval and adaptation levels. Extensive experiments across multiple LLMs and benchmarks demonstrate that RTTC consistently achieves superior accuracy compared to vanilla RAG or TTT, validating the necessity of adaptive, reward-guided TTC selection and the potential of RTTC for scalable, high-performance language model adaptation.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">9</td>
+              <td class="poster-presenter">Juan Manuel Fernández</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Performance vs. Efficiency in Domain-Specific LLM Adaptation: A Comparative Study of Full Fine-Tuning and LoRA on Real-World Data</summary>
+                  <p class="poster-abstract">Large Language Models (LLMs) have demonstrated strong performance across a wide range of natural language processing tasks; however, their adaptation to domain-specific settings remains challenging, particularly under constrained computational resources. In this work, we analyze the trade-off between adaptation quality and computational cost by comparing three strategies: a base model without adaptation, Full Fine-Tuning (FFT), and Low-Rank Adaptation (LoRA), a parameter-efficient fine-tuning technique.
+
+The evaluation is conducted on a document classification task built from a subset of the SEDICI institutional repository, reflecting real-world characteristics such as class imbalance and heterogeneous document structures. The task is formulated as an instruction-based generative classification problem, allowing us to assess adaptation capabilities without introducing additional classification layers.
+
+To ensure comparability and avoid method-specific over-optimization, a controlled experimental setup is defined, maintaining consistent data splits, input format, and training conditions across configurations. Experiments are conducted on the Clementina XXI high-performance computing infrastructure under shared resource constraints.
+
+The results show that LoRA achieves competitive performance compared to full fine-tuning while updating only a small fraction of the model parameters. Although FFT attains the highest performance, it requires substantially higher computational resources. These findings highlight a clear trade-off between performance and efficiency, positioning LoRA as a practical and effective alternative for domain adaptation in resource-constrained environments.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">10</td>
+              <td class="poster-presenter">Nicole Tatiana Parra Valverde</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Diseño arquitectónico mínimo para sistemas RAG observables en español latinoamericano</summary>
+                  <p class="poster-abstract">Este póster presenta una propuesta exploratoria sobre el diseño arquitectónico de sistemas de generación aumentada por recuperación (RAG) aplicados a documentos en español latinoamericano. El trabajo busca analizar cómo estructurar un pipeline mínimo que permita cargar documentos, dividirlos en fragmentos, generar representaciones vectoriales, recuperar contexto relevante y producir respuestas basadas en fuentes. 
+
+Además, se plantea incorporar mecanismos básicos de observabilidad para registrar información clave del proceso, como la consulta realizada, los fragmentos recuperados, la respuesta generada, el tiempo de ejecución y la presencia de citas o de evidencias. La propuesta se enfoca en una versión pequeña y reproducible, pensada para explorar buenas prácticas de arquitectura y diseño de software en aplicaciones de PLN con modelos de lenguaje. 
+
+El objetivo principal no es construir un sistema de gran escala, sino identificar componentes mínimos, decisiones de diseño y riesgos técnicos asociados al desarrollo de sistemas RAG en español.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">11</td>
+              <td class="poster-presenter">Richar Núñez</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Evaluacion cultural de LLMs en contexto cultural de Paraguay</summary>
+                  <p class="poster-abstract">Generar una evaluación acerca de la alineación cultural de LLMs en contextos paraguayos mediante un Benchmark con más de 16 idiomas y paises que ya pasaron por el mismo proceso</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">12</td>
+              <td class="poster-presenter">Tamara Quiroga Curin</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>adapting bias evaluation to domain contexts using generative models</summary>
+                  <p class="poster-abstract">Numerous datasets have been proposed to evaluate social bias in Natural Language Processing (NLP) systems. However, assessing bias within specific application domains remains challenging, as existing approaches often face limitations in scalability and fidelity across domains. In this work, we introduce a domain-adaptive framework that utilizes prompting with Large Language Models (LLMs) to automatically transform template-based bias datasets into domain-specific variants. We apply our method to two widely used benchmarks—Equity Evaluation Corpus (EEC) and Identity Phrase Templates Test Set (IPTTS)—adapting them to the Twitter and Wikipedia Talk data. Our results show that the adapted datasets yield bias estimates more closely aligned with real-world data. These findings highlight the potential of LLM-based prompting to enhance the realism and contextual relevance of bias evaluation in NLP systems.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">12</td>
+              <td class="poster-presenter">Matías Miranda Cabrera</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Representaciones internas de Ideología Política en LLMs: Estudio de Interpretabilidad Mecanicista del Congreso Chileno</summary>
+                  <p class="poster-abstract">Con el auge de los modelos de lenguaje de gran escala (Large Language Models, LLMs), ha existido una vasta exploración de su uso en ciencias sociales como modelos-de-mundo, aunque se carece de un entendimiento profundo sobre cómo sus representaciones internas afectan en las respuestas, más aún en contextos locales, en que los sesgos dominantes aprendidos pueden perjudicar su utilidad.
+El objetivo de esta tesis es caracterizar la representación interna de la ideología política chilena en LLMs, un caso relevante por el contexto político multipartidista y polarizado local. Para ello, se aplican técnicas de Interpretabilidad Mecanicista, que busca, mediante ingeniería inversa sobre los parámetros del modelo, ir más allá de su comportamiento como caja negra. Se realiza la identificación de un vector de representación de la ideología mediante Probing, técnica que busca predecir puntajes políticos empíricos de diputados chilenos a partir de las activaciones modelo. La causalidad y funcionalidad de la representación se validan aplicando intervenciones al modelo, para modular su respuesta política, y probar su generalización en tareas de inferencia como la predicción de votos. Finalmente, se explorarán características más finas usando Autoencoders Dispersos (Sparse Autoencoders), y se evaluará el cambio semántico con respecto al vector de representación política estadounidense.
+Los resultados preliminares logran identificar una representación interna en LLMs altamente correlacionada con la ideología política chilena, localizada principalmente en las capas intermedias. Se espera que esta representación sea causal y útil para explicar la variabilidad en tareas relacionadas, y encontrar una divergencia angular significativa con respecto al vector político estadounidense, confirmando un cambio semántico. En conclusión, este trabajo propone un sistema de evaluación de características sociales para poblaciones subrepresentadas en los datos de entrenamiento de  LLMs, y contribuye a futuras investigaciones sobre su alineamiento regional.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">13</td>
+              <td class="poster-presenter">Sebastián Pinto</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Marco teórico para analizar sesgo ideológico a partir de análisis de sentimiento</summary>
+                  <p class="poster-abstract">La cuantificación del sesgo ideológico de manera rigurosa e interpretable constituye un desafío central en el estudio del discurso público. En este trabajo presentamos un marco basado en máxima entropía para inferir las posiciones ideológicas de medios de comunicación y figuras políticas. El método parte de analizar cómo cada medio menciona a cada figura política, clasificando esas menciones como positivas, neutras o negativas, para luego deducir el posicionamiento ideológico de ambos. Aplicamos este enfoque a publicaciones de Facebook relacionadas con las elecciones presidenciales de Estados Unidos 2024 y Argentina 2023. En ambos casos, las posiciones inferidas muestran una fuerte concordancia con clasificaciones externas e independientes de sesgo mediático. Una ventaja clave del método es que no requiere ningún conocimiento previo sobre la orientación ideológica de los actores y se basa únicamente en los patrones de sentimiento observados en los datos.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">14</td>
+              <td class="poster-presenter">Julieta Paola Storino</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Fundamentos Transformer en los Modelos Modernos de Segmentación de Imágenes</summary>
+                  <p class="poster-abstract">La arquitectura Transformer marcó un cambio de paradigma en el procesamiento del lenguaje natural (NLP) al reemplazar mecanismos recurrentes por esquemas basados en autoatención capaces de capturar dependencias de largo alcance. Posteriormente, estos principios fueron adaptados al dominio visual mediante los Vision Transformers (ViT), permitiendo representar imágenes como secuencias de parches y procesarlas de manera análoga a los tokens lingüísticos. Esta transición impulsó el desarrollo de nuevas arquitecturas para tareas de visión por computadora, particularmente en el ámbito de la segmentación de imágenes.
+
+En este trabajo se revisa la evolución de las arquitecturas basadas en Transformers para segmentación de imágenes, analizando cómo conceptos fundamentales del procesamiento de lenguaje natural, como los embeddings, las codificaciones posicionales, la autoatención y las técnicas de prompting, fueron adaptados al dominio visual. Asimismo, se estudian las modificaciones introducidas para procesar información espacial, generar máscaras de segmentación y permitir la interacción mediante prompts visuales.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">15</td>
+              <td class="poster-presenter">Claudia Andrea González Inostroza</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>DEI en IA Para Latinoamérica: No es solo equidad, es economía.</summary>
+                  <p class="poster-abstract">La incorporación de enfoques de diversidad, equidad e inclusión (DEI) en IA no constituye únicamente una exigencia ética, sino también una necesidad económica y estratégica para LATAM. Se plantea que los sistemas de IA entrenados con datos, idiomas y realidades ajenas a nuestra región pueden reproducir desigualdades, fallar técnicamente, perder mercado y aumentar riesgos legales para las organizaciones. Esto ocurre en un contexto donde el mercado latinoamericano de IA se estima en USD 5.79 billones en 2025, con una proyección de crecimiento a USD 30.2 billones en 2033 y una tasa anual compuesta de 22%. Sin embargo, LATAM recibe solo 1.12% de la inversión global en IA, pese a representar el 6.6% del PIB mundial y el 8.8% de la población global, lo que evidencia una brecha estructural entre el potencial económico de la región y su participación real en el desarrollo tecnológico.
+
+Este trabajo evidencia que el sesgo algorítmico tiene costos empresariales concretos: 36% de las empresas reportó pérdidas económicas asociadas a sesgo algorítmico; dentro de ese grupo, 62% perdió clientes, 61% perdió empleados, 43% perdió ingresos y 43% incurrió en gastos legales. Además, se identifican riesgos regulatorios y judiciales relevantes, como el acuerdo judicial de USD 2.275 millones en el caso SafeRent por sesgo algorítmico en vivienda, y las multas máximas del EU AI Act, que pueden alcanzar €35 millones o el 7% del volumen de negocio anual global para sistemas de IA de alto riesgo.
+
+A su vez, se muestra que DEI también representa una fuente de valor económico. Las empresas ubicadas en el cuartil superior de diversidad de género en equipos ejecutivos tienen 39% más probabilidad de superar en rentabilidad respecto de las que no. En América Latina, las empresas percibidas como diversas en género presentan 93% más probabilidad de desempeño financiero superior, mientras que aquellas comprometidas con la diversidad tienen 152% más probabilidad de proponer nuevas ideas y probar nuevas formas de trabajo. Además, 90% de los profesionales TI en LATAM considera que la transparencia y la ética en IA influyen en la elección de servicios.
+
+En este sentido, se propone que la pregunta central no debe ser solo si un sistema de IA funciona, sino para quién funciona, quién controla sus datos, quién asume sus costos, quién recibe sus beneficios y quién puede cuestionar sus decisiones. Se concluye que, para que la IA funcione en Latinoamérica, DEI debe pasar del discurso a un sistema de gestión basado en medir sesgos, auditar decisiones, gobernar responsabilidades y reparar impactos.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">16</td>
+              <td class="poster-presenter">Gonzalo Vidal Bazterrica</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Mcp en Vaca Muerta</summary>
+                  <p class="poster-abstract">En el desarrollo energetico argentino y en la complejidad de desarrllo de recursos no convencionales armamos unos MCP que permiten a traves de lenguaje natural optimizar los procesos de optimizacion de produccion en Caca Mueeta, usando tecnologia licenciada y Open sourcw</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">17</td>
+              <td class="poster-presenter">Felipe Meza-Obando</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Extracción Automatizada de Información desde Fuentes Web Históricas mediante NLP: Aplicación a la Generación de Datasets de Clima Espacial</summary>
+                  <p class="poster-abstract">La disponibilidad de conjuntos de datos de calidad constituye uno de los principales desafíos para el desarrollo de modelos de aprendizaje automático aplicados al Clima Espacial. Aunque existe una gran cantidad de información histórica disponible en sitios web, reportes técnicos y repositorios desarrollados durante décadas, gran parte de estos datos permanece en formatos heterogéneos, no estructurados o de difícil acceso para su análisis automatizado. En este trabajo se presenta una metodología basada en técnicas de Procesamiento de Lenguaje Natural (NLP) para la extracción automatizada de información desde fuentes web históricas y su transformación en conjuntos de datos estructurados. La propuesta contempla procesos de identificación, recuperación, limpieza y normalización de información relevante, permitiendo consolidar registros provenientes de múltiples fuentes en formatos aptos para análisis científico y entrenamiento de modelos de inteligencia artificial. Como caso de estudio, la metodología se aplica a la construcción de datasets orientados a investigación en Clima Espacial, evidenciando el potencial de las técnicas de NLP para preservar y reutilizar información histórica de valor científico. Los resultados muestran que este enfoque puede contribuir significativamente a la ampliación de repositorios de datos y al fortalecimiento de futuras investigaciones basadas en datos dentro de la comunidad de Clima Espacial.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">18</td>
+              <td class="poster-presenter">Iván Agustín Bravo</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>The Evolution of Thinking</summary>
+                  <p class="poster-abstract">En la búsqueda de resolver problemas con Modelos de Lenguaje, surge la pregunta: ¿tienen comportamientos similares a los de un ser capaz de razonar? En este trabajo, se exploran métodos para estudiar su capacidad de generalización ante un problema típico, introduciendo una métrica para medir la complejidad a partir de la cual el desempeño del modelo se degrada de forma sustancial. Como línea de trabajo complementaria, se estudia la generación algorítmica de problemas a partir de semillas para evaluar si se presenta algún sesgo en las soluciones debido al entrenamiento del modelo.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">18</td>
+              <td class="poster-presenter">Mariano Demaría</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>The Evolution of Thinking</summary>
+                  <p class="poster-abstract">En la búsqueda de resolver problemas con Modelos de Lenguaje, surge la pregunta: ¿tienen comportamientos similares a los de un ser capaz de razonar? En este trabajo, se exploran métodos para estudiar su capacidad de generalización ante un problema típico, introduciendo una métrica para medir la complejidad a partir de la cual el desempeño del modelo se degrada de forma sustancial. Como línea de trabajo complementaria, se estudia la generación algorítmica de problemas a partir de semillas para evaluar si se presenta algún sesgo en las soluciones debido al entrenamiento del modelo.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">19</td>
+              <td class="poster-presenter">Luis Eduardo Ferrer Cruz</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Agente Inteligente basado en NLP para el Control de Calidad Automatizado en Proyectos Ambientales en el Perú</summary>
+                  <p class="poster-abstract">El sector consultoría recibe múltiples observaciones de autoridades gubernamentales respecto a expedientes que se presentan, y en plazos de entrega muy ajustados. Hay un inversión de horas/hombre muy alta, además de la alta probabilidad de cometer errores (duplicidad, omisión, edición inexacta, entre otros). El dolor en ello es que los expedientes no sean aprobados por las autoridades gubernamentales y las propuestas de proyectos fracasen. Es por esa razón que se propone la solución con la implementación de un agente inteligente basado en técnicas de Procesamiento de Lenguaje Natural (NLP), el cual se encuentra orientado a la automatización del control de calidad en la documentación y entregables de propuestas de proyectos ambientales en el Perú.
+
+El sistema propuesto es capaz de analizar observaciones técnicas, informes y descripciones cartográficas en lenguaje natural, identificando inconsistencias, clasificando errores (de forma, fondo y cartográficos) y generando recomendaciones automáticas de mejora. El enfoque metodológico se sustenta en el uso de modelos de representación semántica del lenguaje, combinando técnicas clásicas y modernas de NLP. En una primera etapa, se emplean enfoques basados en TF-IDF y Bag-of-Words como línea base para la vectorización de texto. Posteriormente, se incorporan modelos de lenguaje preentrenados tipo Transformers (BERT o similares) para capturar relaciones contextuales y mejorar la comprensión semántica de observaciones técnicas
+
+Como resultado, el sistema permite automatizar la detección de inconsistencias, generar recomendaciones de mejora y estructurar salidas analíticas que contribuyan a la optimización de los procesos de revisión técnica. Finalmente, se plantea una arquitectura escalable que integra el agente NLP dentro de un ecosistema de analítica avanzada, habilitando su evolución hacia copilotos inteligentes para apoyo en QA/QC en flujos de trabajo empresariales.
+
+Este trabajo demuestra el potencial del NLP como herramienta clave para la transformación digital en procesos de aseguramiento de calidad en la industria ambiental y geoespacial.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">20</td>
+              <td class="poster-presenter">Valentina Andrea Aravena Pérez</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Which Prompting Technique for Argumentative Essay Scoring? A Unified Prompt Optimization Comparison</summary>
+                  <p class="poster-abstract">The comparison of prompting techniques for argumentative Automated Essay Scoring (AES) is hindered by manual prompt tuning, which makes the effect of the technique on prompt engineering imprecise. This work compares eight techniques—Zero-Shot, Few-Shot, and Chain-of-Thought (with and without a rubric), Self-Consistency, and Dual-Rater Adjudication (DRA), a proposed module—on the &quot;Exploring Venus&quot; prompt from ASAP-2.0, all optimized with MIPROv2 under the same metric and budget. The Quadratic Weighted Kappa varies between 0.39 and 0.49 across a 5-fold cross-validation: six techniques form a single statistically equivalent tier, and DRA achieved the highest observed mean (QWK = 0.49) in this setup. The QWK-cost Pareto analysis identifies three efficient techniques—Zero-Shot Rubric, Chain-of-Thought Rubric, and DRA—while Self-Consistency and Few-Shot are Pareto-dominated by cheaper alternatives. We highlight two findings: adding the official rubric to a Zero-Shot prompt raises the QWK from 0.39 to 0.47 with a lower token cost than the baseline without a rubric; and the different prompting mechanisms appear to behave as substitutes rather than being additive, sharing a performance ceiling that we term the structure saturation hypothesis. However, a preliminary analysis of a second argumentative prompt (Driverless cars) suggests that the benefit of the rubric depends on the prompt-rubric fit: the baseline gain is preserved, but the combined effects degrade. The results should be interpreted as conditional on the experimental setup, rather than as universal rankings.</p>
+                </details>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </details>
+
+    </section>
+
+    <section id="speakers">
+
+      <h2>Confirmed Speakers</h2>
+
+      <div class="people-grid">
+
+  
+
+
+        <div class="person">
+          <div class="photo">
+          <img src="lucianaferrer.jpg" alt="Luciana Ferrer">
+          </div>
+          <details class="speaker-card-details">
+            <summary>Luciana Ferrer</summary>
+            <div class="speaker-bio confirmed-bio"><p>Luciana Ferrer es investigadora independiente del CONICET en el Instituto de Ciencias de la Computaci&oacute;n (ICC), CONICET-UBA. Es doctora en Ingenier&iacute;a Electr&oacute;nica por Stanford University e ingeniera electr&oacute;nica por la Universidad de Buenos Aires. Su investigaci&oacute;n se centra en el aprendizaje autom&aacute;tico aplicado al procesamiento del habla y del lenguaje, con especial inter&eacute;s en la equidad y la seguridad de los sistemas.</p></div>
+            <div class="speaker-bio"><p>Independent researcher at the Instituto de Ciencias de la Computación (ICC), CONICET-UBA. PhD in Electronic Engineering from Stanford University (2009). Leads the ICC's speech processing group, part of the Laboratorio de Inteligencia Artificial Aplicada (LIAA), working on pronunciation scoring, mental state recognition, and neurological disease detection from speech. ISCA council member and Technical Program Chair of Interspeech 2024, with over 170 publications and 7700+ citations.</p></div>
+          </details>
+        </div>
+        
+        <div class="person">
+           <div class="photo">
+          <img src="lucianabenotti.jpeg" alt="Luciana Benotti">
+          </div>
+          <details class="speaker-card-details">
+            <summary>Luciana Benotti</summary>
+            <p class="pending-bio">Biograf&iacute;a pr&oacute;ximamente.</p>
+            <div class="speaker-bio"><p>Born and raised in Argentina, with a PhD from INRIA Nancy Grand Est, where she researched multimodal AI agents and NLP. She currently leads the AI Team at Fundación Vía Libre, an NGO defending digital rights in Latin America, and is an associate professor at Universidad Nacional de Córdoba. Her work spans NLP, human-computer interaction, and AI ethics, with a focus on responsible AI and multicultural NLP. She has held fellowships at Stanford CSLI, Università di Trento, and USC.</p></div>
+          </details>
+        </div>
+        <div class="person">
+           <div class="photo">
+          <img src="valentinbarriere.jpg" alt="Valentín Barriere">
+          </div>
+          <details class="speaker-card-details">
+            <summary>Valentín Barriere</summary>
+            <p class="pending-bio">Biograf&iacute;a pr&oacute;ximamente.</p>
+            <div class="speaker-bio"><p>AI professor in the CS department of the University of Chile, specialized in multimodal machine learning for social interaction studies, with a focus on NLP. His research spans multilingual debate analysis, social bias detection, explainable AI, and multimodal satellite data processing. He previously worked for the Cour de Cassation and the European Commission's Joint Research Center, and now directs projects on machine learning for social good, including AI advising for the CopernicusLAC program.</p></div>
+          </details>
+        </div>
+        
+        <div class="person">
+          <div class="photo">
+            <img src="enzoferrante.jpg" alt="Enzo Ferrante">
+          </div>
+          <details class="speaker-card-details">
+            <summary>Enzo Ferrante</summary>
+            <div class="speaker-bio confirmed-bio"><p>Enzo Ferrante es doctor en Ciencias de la Computaci&oacute;n por Universit&eacute; Paris-Saclay e INRIA, e ingeniero en Sistemas por la UNICEN. Actualmente es investigador del CONICET y de la Universidad de Buenos Aires. Su trabajo se centra en la equidad y la robustez en aprendizaje autom&aacute;tico, con aplicaciones en visi&oacute;n por computadora, procesamiento del lenguaje natural y salud.</p></div>
+            <div class="speaker-bio"><p>PhD in Computer Science from Université Paris-Saclay and INRIA (France), and a Systems Engineering degree from UNICEN (Argentina). He was a postdoctoral researcher at Imperial College London and a Fulbright Visiting Researcher at Harvard Medical School. Currently a faculty researcher at CONICET–University of Buenos Aires, focusing on fairness and robustness in machine learning for computer vision and NLP, with applications in healthcare. His work has earned the Mercosur Science & Technology Award and the Google Award for Inclusion Research, among others.</p></div>
+          </details>
+        </div>
+        <div class="person">
+          <div class="photo">
+          <img src="guillermomoncecchi.png" alt="Guillermo Moncecchi">
+          </div>
+          <details class="speaker-card-details">
+            <summary>Guillermo Moncecchi</summary>
+            <p class="pending-bio">Biograf&iacute;a pr&oacute;ximamente.</p>
+            <div class="speaker-bio"><p>Lecturer and researcher at the Natural Language Processing Group of the Universidad de la República, Uruguay. Adjunct Professor and Grade 3 Researcher at the Programa de Apoyo a las Ciencias Básicas (Pedeciba). His research lines include machine learning applied to NLP, subjectivity, and formalisms, and he is interested in open data policy, data science, and digital government. He teaches Machine Learning, Introduction to Natural Language Processing, Logic Programming, and Introduction to Data Science.</p></div>
+          </details>
+        </div>
+        <div class="person">
+          <div class="photo">
+          <img src="guidoivetta.png" alt="Guido Ivetta">
+          </div>
+          <details class="speaker-card-details">
+            <summary>Guido Ivetta</summary>
+            <div class="speaker-bio confirmed-bio"><p>Guido Ivetta es becario doctoral y docente en la Universidad Nacional de C&oacute;rdoba, bajo la supervisi&oacute;n de Luciana Benotti. Su investigaci&oacute;n se centra en la calibraci&oacute;n de modelos de lenguaje y los sesgos en inteligencia artificial. Ha codesarrollado m&aacute;s de seis benchmarks para evaluar sesgos y lidera el desarrollo t&eacute;cnico de EDIA, una herramienta para explorar sesgos en sistemas de IA. Tambi&eacute;n colabora con el equipo de &Eacute;tica en IA de la Fundaci&oacute;n V&iacute;a Libre y es miembro estudiantil del Comit&eacute; de &Eacute;tica de ACL.</p></div>
+            <div class="speaker-bio"><p>PhD student at Universidad Nacional de Córdoba, Argentina, supervised by Luciana Benotti, where he also serves as Assistant Professor. His main academic interests are LLM calibration and AI bias/fairness. He works with the Ethics in AI team at Fundación Vía Libre, is a Student Member of the ACL Ethics Committee, and occasionally works as a visiting researcher at Imperial College London under the supervision of Rafael A. Calvo.</p></div>
+          </details>
+        </div>
+
+        <div class="person">
+          <div class="photo photo-placeholder" role="img" aria-label="Photo not available"></div>
+          <details class="speaker-card-details">
+            <summary>Agust&iacute;n Mosteiro</summary>
+            <div class="speaker-bio confirmed-bio"><p>Agust&iacute;n Mosteiro es licenciado en Ciencias de la Computaci&oacute;n por la Universidad de Buenos Aires. Cofund&oacute; Eryx, una cooperativa especializada en desarrollo de software a medida, y se ha desempe&ntilde;ado como desarrollador, cient&iacute;fico de datos y l&iacute;der de proyectos. Tambi&eacute;n es profesor de Machine Learning Operations en programas de posgrado de la Universidad Torcuato Di Tella y la Universidad de San Andr&eacute;s.</p></div>
+          </details>
+        </div>
+
+        <div class="person">
+          <div class="photo photo-placeholder" role="img" aria-label="Photo not available"></div>
+          <details class="speaker-card-details">
+            <summary>Nicol&aacute;s D'Ippolito</summary>
+            <div class="speaker-bio confirmed-bio"><p>Nicol&aacute;s D'Ippolito lidera el &aacute;rea de Inteligencia Artificial y Datos de Veritran y dirige la Maestr&iacute;a en Inteligencia Artificial de la Universidad de San Andr&eacute;s. Es doctor en Ingenier&iacute;a de Software por Imperial College London y su trabajo se enfoca en la implementaci&oacute;n de inteligencia artificial generativa y agentes conversacionales en entornos de misi&oacute;n cr&iacute;tica.</p></div>
+          </details>
+        </div>
+
+        <div class="person">
+          <div class="photo photo-placeholder" role="img" aria-label="Photo not available"></div>
+          <details class="speaker-card-details">
+            <summary>Fernando Schapachnik</summary>
+            <div class="speaker-bio confirmed-bio"><p>Fernando Schapachnik es doctor en Ciencias de la Computaci&oacute;n, profesor del Departamento de Computaci&oacute;n de la Universidad de Buenos Aires e investigador del Instituto de Ciencias de la Computaci&oacute;n, UBA-CONICET. Hasta 2025 fue director ejecutivo de la Fundaci&oacute;n Sadosky. Sus intereses incluyen la ense&ntilde;anza de las ciencias de la computaci&oacute;n y los aspectos sociales de la tecnolog&iacute;a, en particular la relaci&oacute;n entre inteligencia artificial, educaci&oacute;n y empleo.</p></div>
+          </details>
+        </div>
+
+        <div class="person">
+          <div class="photo photo-placeholder" role="img" aria-label="Photo not available"></div>
+          <details class="speaker-card-details">
+            <summary>Ignacio Sastre</summary>
+            <div class="speaker-bio confirmed-bio"><p>Ignacio Sastre es asistente docente en la Universidad de la Rep&uacute;blica y cofundador de Cognitive Solutions.</p></div>
+          </details>
+        </div>
+
+        <div class="person">
+          <div class="photo">
+            <img src="monica.jpg" alt="Monica Bobrowski">
+          </div>
+          <details class="speaker-card-details">
+            <summary>Monica Bobrowski</summary>
+            <div class="speaker-bio confirmed-bio"><p>Monica Bobrowski es licenciada en Inform&aacute;tica por ESLAI, MBA por la Universidad Torcuato Di Tella y coach ontol&oacute;gica empresarial. Fue socia de Practia y directora de Capital Humano durante m&aacute;s de 15 a&ntilde;os. Tambi&eacute;n se desempe&ntilde;&oacute; como investigadora y docente del Departamento de Computaci&oacute;n de la Universidad de Buenos Aires y de otras universidades.</p></div>
+          </details>
+        </div>
+      </div>
+
+    </section>
+
+<section id="organizers">
+
+  <h2>Organizers</h2>
+
+  <p>
+    Viviana Cotik (Universidad de Buenos Aires - CONICET, Argentina) <br>
+    Aiala Rosá (Universidad de la República, Uruguay) <br>
+    Luis Chiruzzo (Universidad de la República, Uruguay) <br>
+    Santiago Góngora (Universidad de la República, Uruguay) <br>
+    Laura Alonso Alemany (Universidad Nacional de Córdoba, Argentina) <br>
+   <!-- Luciana Benotti (Universidad Nacional de Córdoba - CONICET, Argentina)-->
+  </p>
+
+</section>
+
+<section id="local">
+
+  <h2>Local Support Team</h2>
+
+  <p>
+    Bruno Bianchi <br>
+    Erik Ernst <br>
+    Tomás Schmidt Liermann
+  </p>
+
+  </section>
+        <section id="funding">
+
+  <h2>Funding</h2>
+
+  <p>
+    <a href="https://datamining.dc.uba.ar/datamining/" target="_blank" rel="noopener noreferrer">
+  Master's Program in Data Mining and Knowledge Discovery
+</a>, Facultad de Ciencias Exactas y Naturales + Facultad de Ingeniería<br>
+    <!--Programa de Programa de Apoyo a Reuniones Científicas de la Universidad de Buenos Aires -->
+    Scientific Meetings Support Program of the <a href="https://www.uba.ar/" target="_blank" rel="noopener noreferrer">
+  Universidad de Buenos Aires
+</a><br>
+    <a href="https://khipu.ai/khipux-about/khipux-2025-2026/" target="_blank" rel="noopener noreferrer">
+  KhipuX
+</a><br><br>
+
+  </p>
+
+</section>
 
     <section id="past">
 
@@ -233,118 +1277,6 @@
 
     </section>
 
-    <section id="speakers">
-
-      <h2>Confirmed Speakers</h2>
-
-      <div class="people-grid">
-
-
-
-
-        <div class="person">
-          <div class="photo">
-          <img src="lucianaferrer.jpg" alt="Luciana Ferrer">
-          </div>
-          <p><strong>Luciana Ferrer</strong></p>
-        </div>
-
-        <div class="person">
-           <div class="photo">
-          <img src="lucianabenotti.jpeg" alt="Luciana Benotti">
-          </div>
-          <p><strong>Luciana Benotti</strong></p>
-        </div>
-
-         <div class="person">
-           <div class="photo">
-          <img src="valentinbarriere.jpg" alt="Valentín Barriere">
-          </div>
-          <p><strong>Valentín Barriere</strong></p>
-        </div>
-
-        <div class="person">
-          <div class="photo">
-            <img src="enzoferrante.jpg" alt="Enzo Ferrante">
-          </div>
-          <p><strong>Enzo Ferrante</strong></p>
-        </div>
-
-        <div class="person">
-          <div class="photo">
-          <img src="guillermomoncecchi.png" alt="Guillermo Moncecchi">
-          </div>
-          <p><strong>Guillermo Moncecchi</strong></p>
-        </div>
-
-        <div class="person">
-          <div class="photo">
-          <img src="guidoivetta.png" alt="Guido Ivetta">
-          </div>
-          <p><strong>Guido Ivetta</strong></p>
-        </div>
-
-
-      </div>
-
-    </section>
-
-<section id="organizers">
-
-  <h2>Organizers</h2>
-
-  <p>
-    Viviana Cotik (DC, FCEN, Universidad de Buenos Aires, ICC -CONICET, UBA-, Argentina) <br>
-    Aiala Rosá (INCO, FING, Universidad de la República, Uruguay) <br>
-    Luis Chiruzzo (INCO, FING, Universidad de la República, Uruguay) <br>
-    Santiago Góngora (INCO, FING, Universidad de la República, Uruguay) <br>
-    Laura Alonso Alemany (FaMAF, Universidad Nacional de Córdoba, Argentina) <br>
-   <!-- Luciana Benotti (Universidad Nacional de Córdoba - CONICET, Argentina)-->
-  </p>
-
-</section>
-
-<section id="local">
-
-  <h2>Local Support Team</h2>
-
-  <p>
-    Bruno Bianchi (DC, FCEN, Universidad de Buenos Aires, ICC -CONICET, UBA-, Argentina)<br>
-    Erik Ernst (ICC -CONICET, UBA-, Argentina)
-  </p>
-
-  </section>
-        <section id="dates">
-
-  <h2>Important dates</h2>
-
-  <p>
-
-  Registration deadline: June 15 – 23:59 [Anywhere on Earth time] (2026)<br> 
-  Notification of acceptance: June 26, 2026.<br>
-  School dates: August 3–4, 2026.<br>
-
-
-  </p>
-
-
-</section>
-        <section id="funding">
-
-  <h2>Funding</h2>
-
-  <p>
-    <!--Programa de Programa de Apoyo a Reuniones Científicas de la Universidad de Buenos Aires -->
-    Scientific Meetings Support Program of the <a href="https://www.uba.ar/" target="_blank" rel="noopener noreferrer">
-  Universidad de Buenos Aires
-</a><br>
-    <a href="https://khipu.ai/khipux-about/khipux-2025-2026/" target="_blank" rel="noopener noreferrer">
-  KhipuX
-</a><br><br>
-
-  </p>
-
-</section>
     <section id="contact">
 
   <h2>Questions</h2>
