@@ -172,6 +172,10 @@
       font-weight: 600;
     }
 
+    .schedule-date {
+      white-space: nowrap;
+    }
+
     .schedule-table tr:last-child td {
       border-bottom: 0;
     }
@@ -202,6 +206,18 @@
       margin-left: 6px;
     }
 
+    .virtual-attendance {
+      margin: 30px 0 0;
+      padding: 14px 18px;
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 4px;
+    }
+
+    .virtual-attendance p {
+      margin: 0;
+    }
+
     .status-badge {
       display: inline-block;
       margin-left: 12px;
@@ -227,6 +243,23 @@
 
     .event-details > summary {
       color: #1d4ed8;
+    }
+
+    .event-name {
+      margin: 0;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .event-speaker {
+      margin: 5px 0 0;
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    .event-virtual-link {
+      margin: 10px 0 0 !important;
+      font-weight: 600;
     }
 
     .event-details[open] > summary {
@@ -501,11 +534,15 @@
 
     </section>
 
+    <div class="virtual-attendance">
+      <p><strong>Watch online:</strong> Talks and the panel can also be followed virtually. Open the corresponding talk or panel below to find its live-stream link.</p>
+    </div>
+
     <section id="schedule">
 
       <h2>Schedule</h2>
 
-      
+
 
       <div class="schedule-locations">
         <p>
@@ -519,9 +556,9 @@
         <table class="schedule-table">
           <thead>
             <tr>
-              <th scope="col">Monday, August 3</th>
+              <th scope="col" class="schedule-date">Monday, August 3</th>
               <th scope="col">Activity</th>
-              <th scope="col">Tuesday, August 4</th>
+              <th scope="col" class="schedule-date">Tuesday, August 4</th>
               <th scope="col">Activity</th>
             </tr>
           </thead>
@@ -540,20 +577,24 @@
             </tr>
             <tr>
               <td class="schedule-time">9:30–10:30</td>
-              <td><span class="event-type">Talk —</span> Enzo Ferrante</td>
+              <td>
+                <p class="event-name"><span class="event-type">Talk &mdash;</span> Equidad y sesgo en modelos de visi&oacute;n y lenguaje</p>
+                <p class="event-speaker">Enzo Ferrante</p>
+                <details class="event-details">
+                  <summary>Description</summary>
+                  <p class="event-virtual-link"><a href="https://youtube.com/live/jdacmm9oTMo?feature=share" target="_blank" rel="noopener noreferrer">Watch this talk online</a></p>
+                  <div class="event-details-content">
+                    <p>Esta charla presenta una visi&oacute;n general de mi trabajo sobre equidad, sesgos y evaluaci&oacute;n en modelos modernos de visi&oacute;n y lenguaje, basado en investigaciones realizadas en el &aacute;mbito de las im&aacute;genes m&eacute;dicas, los sistemas multimodales y los grandes modelos de lenguaje. Comienzo analizando c&oacute;mo los desequilibrios demogr&aacute;ficos en los conjuntos de datos de im&aacute;genes m&eacute;dicas (en particular, en grandes colecciones de radiograf&iacute;as de t&oacute;rax) dan lugar a disparidades sistem&aacute;ticas y cl&iacute;nicamente relevantes en el rendimiento entre distintos grupos de pacientes seg&uacute;n sexo y otras caracter&iacute;sticas, lo que motiva esfuerzos m&aacute;s amplios hacia una inteligencia artificial confiable y responsable en salud, como se refleja en gu&iacute;as tales como FUTURE-AI. Luego abordo los sesgos impl&iacute;citos en los grandes modelos de lenguaje, con especial foco en su impacto sobre las poblaciones transg&eacute;nero en contextos relacionados con la salud: si bien los modelos suelen manifestar expl&iacute;citamente comportamientos no discriminatorios, las pruebas de asociaci&oacute;n de palabras y de sesgo en la toma de decisiones revelan la presencia de sesgos impl&iacute;citos consistentes tanto en ingl&eacute;s como en espa&ntilde;ol. Finalmente, examino el sesgo entre modalidades en modelos de visi&oacute;n-lenguaje, donde las interacciones entre las representaciones visuales y textuales pueden dar lugar a resultados inesperados en tareas como la caracterizaci&oacute;n de enfermedades (<em>disease phenotyping</em>) y la generaci&oacute;n de informes radiol&oacute;gicos, con consecuencias potencialmente relevantes para grupos hist&oacute;ricamente marginados, como los pacientes transg&eacute;nero.</p>
+                  </div>
+                </details>
+              </td>
               <td class="schedule-time">9:30–11:00</td>
               <td>
+                <p class="event-name"><span class="event-type">Panel &mdash;</span> Working in Industry and AI</p>
+                <p class="event-speaker">Monica Bobrowski, Agust&iacute;n Mosteiro, Nicol&aacute;s D'Ippolito, Fernando Schapachnik</p>
                 <details class="event-details">
-                  <summary><span class="event-type">Panel &mdash;</span> Working in Industry and AI</summary>
-                  <div class="event-details-content">
-                    <p class="speaker-label">Panelists</p>
-                    <ul class="panelist-list">
-                      <li>Monica Bobrowski</li>
-                      <li>Agust&iacute;n Mosteiro</li>
-                      <li>Nicol&aacute;s D'Ippolito</li>
-                      <li>Fernando Schapachnik</li>
-                    </ul>
-                  </div>
+                  <summary>Watch online</summary>
+                  <p class="event-virtual-link"><a href="https://youtube.com/live/pdNX70HNhXg?feature=share" target="_blank" rel="noopener noreferrer">Watch this panel online</a></p>
                 </details>
               </td>
             </tr>
@@ -566,24 +607,24 @@
             <tr>
               <td class="schedule-time">11:30–12:30</td>
               <td>
+                <p class="event-name"><span class="event-type">Talk &mdash;</span> De la Simple Fusi&oacute;n a las Nuevas Fronteras: una introducci&oacute;n a la IA Multimodal</p>
+                <p class="event-speaker">Valent&iacute;n Barriere</p>
                 <details class="event-details">
-                  <summary><span class="event-type">Talk —</span> Valentín Barriere</summary>
+                  <summary>Description</summary>
+                  <p class="event-virtual-link"><a href="https://youtube.com/live/7Yd7nrQFp2A?feature=share" target="_blank" rel="noopener noreferrer">Watch this talk online</a></p>
                   <div class="event-details-content">
-                    <p class="speaker-label">Title</p>
-                    <p>De la Simple Fusión a las Nuevas Fronteras: una introducción a la IA Multimodal</p>
-                    <p class="speaker-label">Description</p>
                     <p>Esta charla introduce el aprendizaje automático multimodal para un público de NLP: cómo los modelos combinan señales de distintas modalidades, cómo podemos medir y modelizar formalmente qué comparten realmente las modalidades entre sí, y cómo tratar las modalidades como tokens de un grande modelo de lenguaje. Recorreremos este arco a través de algunas de las arquitecturas que lo definieron, para luego adentrarnos en un territorio menos convencional: modalidades que llevan la definición habitual de “multimodal” más allá del texto, la imagen y el audio. La charla cierra con un par de ejemplos concretos de investigación en curso que aplican estas ideas en la práctica.</p>
                   </div>
                 </details>
               </td>
               <td class="schedule-time">11:30–12:30</td>
               <td>
+                <p class="event-name"><span class="event-type">Talk &mdash;</span> &iquest;Cu&aacute;n confiable es esta respuesta? Medici&oacute;n de incertidumbre para grandes modelos de lenguaje</p>
+                <p class="event-speaker">Luciana Ferrer</p>
                 <details class="event-details">
-                  <summary><span class="event-type">Talk —</span> Luciana Ferrer</summary>
+                  <summary>Description</summary>
+                  <p class="event-virtual-link"><a href="https://youtube.com/live/7r2Y5-1CFCk?feature=share" target="_blank" rel="noopener noreferrer">Watch this talk online</a></p>
                   <div class="event-details-content">
-                    <p class="speaker-label">Title</p>
-                    <p>¿Cuán confiable es esta respuesta? Medición de incertidumbre para grandes modelos de lenguaje</p>
-                    <p class="speaker-label">Description</p>
                     <p>Durante el uso de sistemas de inteligencia artificial, tener acceso a una medida de la incertidumbre sobre la respuesta generada permite a los usuarios tomar decisiones informadas sobre aceptar o rechazar una respuesta del sistema en función de costos específicos para su aplicación. Esto es especialmente importante en aplicaciones de alto riesgo, donde una respuesta incorrecta puede tener graves consecuencias. En esta charla voy a describir varios métodos para la generación de puntajes de incertidumbre, las métricas usadas para su evaluación y diversas maneras de usar estos puntajes en la práctica.</p>
                   </div>
                 </details>
@@ -598,24 +639,22 @@
             <tr>
               <td class="schedule-time">14:00–15:15</td>
               <td>
+                <p class="event-name"><span class="event-type">Tutorial &mdash;</span> Evaluaci&oacute;n sociocultural de modelos de lenguaje</p>
+                <p class="event-speaker">Luciana Benotti, Guido Ivetta</p>
                 <details class="event-details">
-                  <summary><span class="event-type">Tutorial —</span> Luciana Benotti, Guido Ivetta</summary>
+                  <summary>Description</summary>
                   <div class="event-details-content">
-                    <p class="speaker-label">Title</p>
-                    <p>Evaluación sociocultural de modelos de lenguaje</p>
-                    <p class="speaker-label">Description</p>
                     <p>Este taller teórico-práctico aborda la evaluación de sesgos sociales, estereotipos y el uso de expresiones típicas locales en modelos de lenguaje. Examinaremos cómo los modelos de lenguaje asocian atributos a diferentes identidades, apoyándonos en investigaciones de nuestro equipo en la Universidad Nacional de Córdoba. Analizaremos los datos recolectados durante la misma sesión, pondremos a prueba experimentos de evaluación empírica y exploraremos cómo responden los modelos ante frases propias de nuestra región, investigando si estas particularidades lingüísticas y culturales se convierten en una fuente de alucinaciones.</p>
                   </div>
                 </details>
               </td>
               <td class="schedule-time">14:30–15:45</td>
               <td>
+                <p class="event-name"><span class="event-type">Tutorial &mdash;</span> Entrenamiento de Grandes Modelos de Lenguaje</p>
+                <p class="event-speaker">Guillermo Moncecchi, Ignacio Sastre</p>
                 <details class="event-details">
-                  <summary><span class="event-type">Tutorial —</span> Guillermo Moncecchi, Ignacio Sastre</summary>
+                  <summary>Description</summary>
                   <div class="event-details-content">
-                    <p class="speaker-label">Title</p>
-                    <p>Entrenamiento de Grandes Modelos de Lenguaje</p>
-                    <p class="speaker-label">Description</p>
                     <p>En este taller teórico-práctico veremos cómo construir y entrenar un modelo de lenguaje decoder-only con arquitectura Transformer para resolver una tarea particular, bastante rioplatense, partiendo de ejemplos disponibles. Presentaremos primero los conceptos fundamentales para la construcción y entrenamiento de redes neuronales y cómo se implementan en PyTorch, para luego diseñar y entrenar el modelo de lenguaje elegido desde cero. Analizaremos el modelo construido y veremos cómo se expresan algunas características del mecanismo de atención en sus pesos.</p>
                   </div>
                 </details>
@@ -661,30 +700,6 @@
           <tbody>
             <tr>
               <td class="poster-order">1</td>
-              <td class="poster-presenter">Gian Carlo Orcotoma Mormontoy</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>Hacia la creación de un corpus paralelo quechua collao–español mediante Reconocimiento Óptico de Caracteres (OCR)</summary>
-                  <p class="poster-abstract">El idioma quechua constituye un elemento fundamental de la identidad social y cultural del Perú, y posee una gran relevancia lingüística y cultural. Sin embargo, enfrenta importantes desafíos en términos de representación digital. Una de las principales limitaciones es la escasez de recursos, como los corpus paralelos, lo que restringe el desarrollo de herramientas tecnológicas para su análisis y aplicación práctica.
-
-Este estudio aborda dicha brecha mediante una metodología para la construcción de un corpus paralelo utilizando Reconocimiento Óptico de Caracteres (OCR). Se digitalizó una colección de textos de origen común con el fin de crear un corpus que permita un acceso confiable a la información. El corpus resultante constituye un recurso valioso tanto para la investigación lingüística y el Procesamiento del Lenguaje Natural (PLN) como para los hablantes de quechua.
-
-El material fuente proviene de obras elaboradas por egresados de la Academia Mayor de la Lengua Quechua y validadas por su personal académico, lo que garantiza la integridad gramatical, sintáctica y semántica de los textos.</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">2</td>
-              <td class="poster-presenter">Leonardo Aluhe Correa</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>Hacia una Womb Grammar para el Mapuche</summary>
-                  <p class="poster-abstract">Se busca, mediante el uso de Womb Grammars, crear una gramática para las frases nominales de la lengua Mapuche. Una Womb Grammar nos permite obtener una gramática para una lengua objetivo poco estudiada a partir de una lengua origen bien estudiada. Requiere 3 entradas críticas: Un corpus de oraciones bien escritas en la lengua objetivo, el léxico correspondiente para su comprención, y las reglas sintácticas de la lengua origen.</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">3</td>
               <td class="poster-presenter">Stephanny Gabriela Sánchez Bautista</td>
               <td>
                 <details class="poster-title-details">
@@ -694,23 +709,7 @@ El material fuente proviene de obras elaboradas por egresados de la Academia May
               </td>
             </tr>
             <tr>
-              <td class="poster-order">4</td>
-              <td class="poster-presenter">Paola Cúneo</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>QomL’aqtaqa. A Qom-Spanish Parallel Corpus for Natural Language Processing, with a Machine Translation Baseline</summary>
-                  <p class="poster-abstract">Qom, a language of the Guaycuruan family, is a low-resource language for NLP and
-speech processing. We present the first parallel Qom–Spanish corpus in a computationally
-usable format, comprising 33,392 parallel segments, totaling 1,469,905 Qom tokens and
-891,344 Spanish tokens. A subset of 2,943 segments excludes Bible-derived content. It
-includes alignments at different levels: sentences, sentence fragments, and paragraphs,
-and is compiled from multiple sources, both previously available and newly collected. We
-also present bidirectional neural machine translation baselines based on NLLB-200, achieving competitive performance in both translation directions on the full dataset, and lower performance on the non-Bible subset. An ablation study shows that training exclusively on biblical data reduces performance on non-biblical text, highlighting the importance of domain diversity in low-resource machine translation.</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">5</td>
+              <td class="poster-order">2</td>
               <td class="poster-presenter">Paola Cúneo</td>
               <td>
                 <details class="poster-title-details">
@@ -722,7 +721,7 @@ En este trabajo presentamos los avances en la construcción de un corpus de habl
               </td>
             </tr>
             <tr>
-              <td class="poster-order">6</td>
+              <td class="poster-order">3</td>
               <td class="poster-presenter">Macarena Fernandez Urquiza</td>
               <td>
                 <details class="poster-title-details">
@@ -733,7 +732,7 @@ This work extends the investigation to the Qom↔Spanish pair. Qom is a Guaycuru
               </td>
             </tr>
             <tr>
-              <td class="poster-order">7</td>
+              <td class="poster-order">4</td>
               <td class="poster-presenter">Ignacio Giuliano Iannello</td>
               <td>
                 <details class="poster-title-details">
@@ -746,7 +745,7 @@ Bratti[1] presenta un modelo entrenado en LSA-T que reporta un BLEU-1 de ~9%.  T
               </td>
             </tr>
             <tr>
-              <td class="poster-order">8</td>
+              <td class="poster-order">5</td>
               <td class="poster-presenter">Tadeo Kaufmann</td>
               <td>
                 <details class="poster-title-details">
@@ -759,7 +758,7 @@ en rioplatense (8.940 instancias) construido sobre el corpus de eye-tracking Cue
               </td>
             </tr>
             <tr>
-              <td class="poster-order">9</td>
+              <td class="poster-order">6</td>
               <td class="poster-presenter">Juan Miguel Vásquez Aguilar</td>
               <td>
                 <details class="poster-title-details">
@@ -769,7 +768,7 @@ en rioplatense (8.940 instancias) construido sobre el corpus de eye-tracking Cue
               </td>
             </tr>
             <tr>
-              <td class="poster-order">10</td>
+              <td class="poster-order">7</td>
               <td class="poster-presenter">Nicolás Rubinstein</td>
               <td>
                 <details class="poster-title-details">
@@ -783,7 +782,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               </td>
             </tr>
             <tr>
-              <td class="poster-order">11</td>
+              <td class="poster-order">8</td>
               <td class="poster-presenter">Adrián Fernando Acarapi Roca</td>
               <td>
                 <details class="poster-title-details">
@@ -793,17 +792,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               </td>
             </tr>
             <tr>
-              <td class="poster-order">12</td>
-              <td class="poster-presenter">Axel Sirota</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>Agent to Agent de una manera escalable</summary>
-                  <p class="poster-abstract">En el momento de escalar un sistema de agentes de pares a decenas surgen varios problemas de concurrencia y escalabilidas. Investigamos potenciales soluciones al problema de escalabilidad de agentes en modo swarm</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">13</td>
+              <td class="poster-order">9</td>
               <td class="poster-presenter">Lesly Zerna</td>
               <td>
                 <details class="poster-title-details">
@@ -817,7 +806,7 @@ El objetivo es demostrar cómo la transición de prototipos educativos a arquite
               </td>
             </tr>
             <tr>
-              <td class="poster-order">14</td>
+              <td class="poster-order">10</td>
               <td class="poster-presenter">Favio Di Ciocco</td>
               <td>
                 <details class="poster-title-details">
@@ -827,7 +816,7 @@ El objetivo es demostrar cómo la transición de prototipos educativos a arquite
               </td>
             </tr>
             <tr>
-              <td class="poster-order">15</td>
+              <td class="poster-order">11</td>
               <td class="poster-presenter">Giuliano Crenna</td>
               <td>
                 <details class="poster-title-details">
@@ -837,7 +826,7 @@ El objetivo es demostrar cómo la transición de prototipos educativos a arquite
               </td>
             </tr>
             <tr>
-              <td class="poster-order">16</td>
+              <td class="poster-order">12</td>
               <td class="poster-presenter">Eric Lützow Holm</td>
               <td>
                 <details class="poster-title-details">
@@ -847,12 +836,12 @@ El objetivo es demostrar cómo la transición de prototipos educativos a arquite
               </td>
             </tr>
             <tr>
-              <td class="poster-order">17</td>
-              <td class="poster-presenter">Luis Jeronimo Loera Moreno</td>
+              <td class="poster-order">13</td>
+              <td class="poster-presenter">Patricio Gerpe</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>SEONIA: Procesamiento de Lenguaje Natural y Generación Aumentada por Recuperación (RAG) para la Educación Inclusiva</summary>
-                  <p class="poster-abstract">El proyecto SEONIA aplica técnicas avanzadas de Procesamiento de Lenguaje Natural (PLN) para crear entornos educativos verdaderamente inclusivos y personalizados. Mediante la integración de sistemas de Inteligencia Artificial agéntica y arquitecturas de Generación Aumentada por Recuperación (RAG), la plataforma analiza, simplifica y reestructura materiales didácticos estandarizados para adaptarlos a los requerimientos cognitivos de cada estudiante. El trabajo expone el flujo de procesamiento semántico, la optimización de modelos transformadores para la generación de contenido educativo, y demuestra cómo la comprensión del lenguaje natural (NLU) actúa como puente para superar barreras de aprendizaje en la educación moderna.</p>
+                  <summary>Activación Endógena mediante Homeostasis Epistémica en Sistemas Multi-Agente Basados en LLMs</summary>
+                  <p class="poster-abstract">Los sistemas multi-agente basados en modelos de lenguaje (LLMs) tienden a perder coherencia a medida que la interacción se extiende, un fenómeno conocido como colapso de contexto que, en entornos de debate rebatible, invalida el debate. Los marcos de trabajo contemporáneos (como AutoGen, MetaGPT o LangGraph) mantienen una activación exógena: el momento en que habla cada agente se decide por fuera de su estado interno, desacoplando la activación de la presión epistémica que el agente acumula. La biología sugiere una alternativa: las variables internas acumulan tensión, gatillan una respuesta y regresan al equilibrio sin una instrucción externa (homeostasis). En este trabajo presentamos una estrategia de orquestación endógena bio-inspirada donde cada agente gestiona un déficit epistémico interno ($\delta_i$) que aumenta de forma constante durante los periodos de inactividad y se reduce inmediatamente después de realizar una contribución lingüística útil; una función sigmoide transforma esta tensión en una probabilidad de acción. Formalizamos este marco a través de los Axiomas de Autonomía Homeostática (AAH) y presentamos un diseño experimental orientado a aislar el comportamiento del modelo puramente homeostático frente a ruteadores tradicionales de LangGraph en debates de texto. Nuestros resultados preliminares muestran que la activación endógena pura logra mitigar la monopolización del piso conversacional, distribuyendo los turnos de habla de manera orgánica sin requerir las complejidades asociadas a mecanismos de aprendizaje por refuerzo.</p>
                 </details>
               </td>
             </tr>
@@ -905,20 +894,6 @@ El objetivo es demostrar cómo la transición de prototipos educativos a arquite
             </tr>
             <tr>
               <td class="poster-order">4</td>
-              <td class="poster-presenter">Ignacio Gamez</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>Mapeo de tabla de laboratorio al estandar LOINC</summary>
-                  <p class="poster-abstract">La interoperabilidad semántica entre sistemas de información en salud requiere la estandarización de terminologías locales hacia vocabularios controlados de referencia, como LOINC. En el sistema SIGEHOS, historia clínica electrónica del Gobierno de la Ciudad de Buenos Aires, las prácticas de laboratorio se registran bajo una nomenclatura propia, no estandarizada, lo que dificulta su comparación, análisis e interoperabilidad con otros sistemas. El mapeo manual de estas prácticas hacia LOINC representa una tarea costosa en tiempo y recursos especializados, dada la magnitud del catálogo de referencia.
-
-En este trabajo se propone un enfoque semiautomático basado en técnicas de procesamiento de lenguaje natural para asistir en dicho mapeo, con el objetivo de reducir el esfuerzo de etiquetado manual. El proceso consta de las siguientes etapas: (1) preprocesamiento y normalización textual de las descripciones de prácticas de SIGEHOS y de los términos LOINC; (2) generación de representaciones vectoriales (embeddings) semánticas de ambos conjuntos; (3) recuperación de los k vecinos más cercanos (KNN) en el espacio de embeddings, obteniendo un conjunto reducido de candidatos LOINC por cada práctica local; y (4) selección final mediante un modelo de lenguaje de gran escala (LLM), que evalúa los candidatos recuperados y determina el/los mapeos más adecuados, o indica la ausencia de correspondencia válida.
-
-Este enfoque transforma la tarea de búsqueda exhaustiva manual en un proceso de validación experta sobre un conjunto acotado de candidatos, con el potencial de acelerar significativamente el proceso de mapeo terminológico y facilitar su mantenimiento a futuro.</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">5</td>
               <td class="poster-presenter">Angela Lama Vargas</td>
               <td>
                 <details class="poster-title-details">
@@ -928,7 +903,7 @@ Este enfoque transforma la tarea de búsqueda exhaustiva manual en un proceso de
               </td>
             </tr>
             <tr>
-              <td class="poster-order">6</td>
+              <td class="poster-order">5</td>
               <td class="poster-presenter">Ramón Javier Igarreta</td>
               <td>
                 <details class="poster-title-details">
@@ -938,7 +913,7 @@ Este enfoque transforma la tarea de búsqueda exhaustiva manual en un proceso de
               </td>
             </tr>
             <tr>
-              <td class="poster-order">7</td>
+              <td class="poster-order">6</td>
               <td class="poster-presenter">Tomás Schmidt</td>
               <td>
                 <details class="poster-title-details">
@@ -954,7 +929,7 @@ Este poster esta basado en mi tesis de licenciatura.</p>
               </td>
             </tr>
             <tr>
-              <td class="poster-order">8</td>
+              <td class="poster-order">7</td>
               <td class="poster-presenter">Juan Pablo Muñoz</td>
               <td>
                 <details class="poster-title-details">
@@ -964,7 +939,7 @@ Este poster esta basado en mi tesis de licenciatura.</p>
               </td>
             </tr>
             <tr>
-              <td class="poster-order">9</td>
+              <td class="poster-order">8</td>
               <td class="poster-presenter">Juan Manuel Fernández</td>
               <td>
                 <details class="poster-title-details">
@@ -980,7 +955,7 @@ The results show that LoRA achieves competitive performance compared to full fin
               </td>
             </tr>
             <tr>
-              <td class="poster-order">10</td>
+              <td class="poster-order">9</td>
               <td class="poster-presenter">Nicole Tatiana Parra Valverde</td>
               <td>
                 <details class="poster-title-details">
@@ -994,17 +969,7 @@ El objetivo principal no es construir un sistema de gran escala, sino identifica
               </td>
             </tr>
             <tr>
-              <td class="poster-order">11</td>
-              <td class="poster-presenter">Richar Núñez</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>Evaluacion cultural de LLMs en contexto cultural de Paraguay</summary>
-                  <p class="poster-abstract">Generar una evaluación acerca de la alineación cultural de LLMs en contextos paraguayos mediante un Benchmark con más de 16 idiomas y paises que ya pasaron por el mismo proceso</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">12</td>
+              <td class="poster-order">10</td>
               <td class="poster-presenter">Tamara Quiroga Curin</td>
               <td>
                 <details class="poster-title-details">
@@ -1014,19 +979,7 @@ El objetivo principal no es construir un sistema de gran escala, sino identifica
               </td>
             </tr>
             <tr>
-              <td class="poster-order">12</td>
-              <td class="poster-presenter">Matías Miranda Cabrera</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>Representaciones internas de Ideología Política en LLMs: Estudio de Interpretabilidad Mecanicista del Congreso Chileno</summary>
-                  <p class="poster-abstract">Con el auge de los modelos de lenguaje de gran escala (Large Language Models, LLMs), ha existido una vasta exploración de su uso en ciencias sociales como modelos-de-mundo, aunque se carece de un entendimiento profundo sobre cómo sus representaciones internas afectan en las respuestas, más aún en contextos locales, en que los sesgos dominantes aprendidos pueden perjudicar su utilidad.
-El objetivo de esta tesis es caracterizar la representación interna de la ideología política chilena en LLMs, un caso relevante por el contexto político multipartidista y polarizado local. Para ello, se aplican técnicas de Interpretabilidad Mecanicista, que busca, mediante ingeniería inversa sobre los parámetros del modelo, ir más allá de su comportamiento como caja negra. Se realiza la identificación de un vector de representación de la ideología mediante Probing, técnica que busca predecir puntajes políticos empíricos de diputados chilenos a partir de las activaciones modelo. La causalidad y funcionalidad de la representación se validan aplicando intervenciones al modelo, para modular su respuesta política, y probar su generalización en tareas de inferencia como la predicción de votos. Finalmente, se explorarán características más finas usando Autoencoders Dispersos (Sparse Autoencoders), y se evaluará el cambio semántico con respecto al vector de representación política estadounidense.
-Los resultados preliminares logran identificar una representación interna en LLMs altamente correlacionada con la ideología política chilena, localizada principalmente en las capas intermedias. Se espera que esta representación sea causal y útil para explicar la variabilidad en tareas relacionadas, y encontrar una divergencia angular significativa con respecto al vector político estadounidense, confirmando un cambio semántico. En conclusión, este trabajo propone un sistema de evaluación de características sociales para poblaciones subrepresentadas en los datos de entrenamiento de  LLMs, y contribuye a futuras investigaciones sobre su alineamiento regional.</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">13</td>
+              <td class="poster-order">11</td>
               <td class="poster-presenter">Sebastián Pinto</td>
               <td>
                 <details class="poster-title-details">
@@ -1036,7 +989,7 @@ Los resultados preliminares logran identificar una representación interna en LL
               </td>
             </tr>
             <tr>
-              <td class="poster-order">14</td>
+              <td class="poster-order">12</td>
               <td class="poster-presenter">Julieta Paola Storino</td>
               <td>
                 <details class="poster-title-details">
@@ -1048,23 +1001,7 @@ En este trabajo se revisa la evolución de las arquitecturas basadas en Transfor
               </td>
             </tr>
             <tr>
-              <td class="poster-order">15</td>
-              <td class="poster-presenter">Claudia Andrea González Inostroza</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>DEI en IA Para Latinoamérica: No es solo equidad, es economía.</summary>
-                  <p class="poster-abstract">La incorporación de enfoques de diversidad, equidad e inclusión (DEI) en IA no constituye únicamente una exigencia ética, sino también una necesidad económica y estratégica para LATAM. Se plantea que los sistemas de IA entrenados con datos, idiomas y realidades ajenas a nuestra región pueden reproducir desigualdades, fallar técnicamente, perder mercado y aumentar riesgos legales para las organizaciones. Esto ocurre en un contexto donde el mercado latinoamericano de IA se estima en USD 5.79 billones en 2025, con una proyección de crecimiento a USD 30.2 billones en 2033 y una tasa anual compuesta de 22%. Sin embargo, LATAM recibe solo 1.12% de la inversión global en IA, pese a representar el 6.6% del PIB mundial y el 8.8% de la población global, lo que evidencia una brecha estructural entre el potencial económico de la región y su participación real en el desarrollo tecnológico.
-
-Este trabajo evidencia que el sesgo algorítmico tiene costos empresariales concretos: 36% de las empresas reportó pérdidas económicas asociadas a sesgo algorítmico; dentro de ese grupo, 62% perdió clientes, 61% perdió empleados, 43% perdió ingresos y 43% incurrió en gastos legales. Además, se identifican riesgos regulatorios y judiciales relevantes, como el acuerdo judicial de USD 2.275 millones en el caso SafeRent por sesgo algorítmico en vivienda, y las multas máximas del EU AI Act, que pueden alcanzar €35 millones o el 7% del volumen de negocio anual global para sistemas de IA de alto riesgo.
-
-A su vez, se muestra que DEI también representa una fuente de valor económico. Las empresas ubicadas en el cuartil superior de diversidad de género en equipos ejecutivos tienen 39% más probabilidad de superar en rentabilidad respecto de las que no. En América Latina, las empresas percibidas como diversas en género presentan 93% más probabilidad de desempeño financiero superior, mientras que aquellas comprometidas con la diversidad tienen 152% más probabilidad de proponer nuevas ideas y probar nuevas formas de trabajo. Además, 90% de los profesionales TI en LATAM considera que la transparencia y la ética en IA influyen en la elección de servicios.
-
-En este sentido, se propone que la pregunta central no debe ser solo si un sistema de IA funciona, sino para quién funciona, quién controla sus datos, quién asume sus costos, quién recibe sus beneficios y quién puede cuestionar sus decisiones. Se concluye que, para que la IA funcione en Latinoamérica, DEI debe pasar del discurso a un sistema de gestión basado en medir sesgos, auditar decisiones, gobernar responsabilidades y reparar impactos.</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">16</td>
+              <td class="poster-order">13</td>
               <td class="poster-presenter">Gonzalo Vidal Bazterrica</td>
               <td>
                 <details class="poster-title-details">
@@ -1074,7 +1011,7 @@ En este sentido, se propone que la pregunta central no debe ser solo si un siste
               </td>
             </tr>
             <tr>
-              <td class="poster-order">17</td>
+              <td class="poster-order">14</td>
               <td class="poster-presenter">Felipe Meza-Obando</td>
               <td>
                 <details class="poster-title-details">
@@ -1084,8 +1021,8 @@ En este sentido, se propone que la pregunta central no debe ser solo si un siste
               </td>
             </tr>
             <tr>
-              <td class="poster-order">18</td>
-              <td class="poster-presenter">Iván Agustín Bravo</td>
+              <td class="poster-order">15</td>
+              <td class="poster-presenter">Iv&aacute;n Agust&iacute;n Bravo<br>Mariano Demar&iacute;a</td>
               <td>
                 <details class="poster-title-details">
                   <summary>The Evolution of Thinking</summary>
@@ -1094,17 +1031,7 @@ En este sentido, se propone que la pregunta central no debe ser solo si un siste
               </td>
             </tr>
             <tr>
-              <td class="poster-order">18</td>
-              <td class="poster-presenter">Mariano Demaría</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>The Evolution of Thinking</summary>
-                  <p class="poster-abstract">En la búsqueda de resolver problemas con Modelos de Lenguaje, surge la pregunta: ¿tienen comportamientos similares a los de un ser capaz de razonar? En este trabajo, se exploran métodos para estudiar su capacidad de generalización ante un problema típico, introduciendo una métrica para medir la complejidad a partir de la cual el desempeño del modelo se degrada de forma sustancial. Como línea de trabajo complementaria, se estudia la generación algorítmica de problemas a partir de semillas para evaluar si se presenta algún sesgo en las soluciones debido al entrenamiento del modelo.</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">19</td>
+              <td class="poster-order">16</td>
               <td class="poster-presenter">Luis Eduardo Ferrer Cruz</td>
               <td>
                 <details class="poster-title-details">
@@ -1116,16 +1043,6 @@ El sistema propuesto es capaz de analizar observaciones técnicas, informes y de
 Como resultado, el sistema permite automatizar la detección de inconsistencias, generar recomendaciones de mejora y estructurar salidas analíticas que contribuyan a la optimización de los procesos de revisión técnica. Finalmente, se plantea una arquitectura escalable que integra el agente NLP dentro de un ecosistema de analítica avanzada, habilitando su evolución hacia copilotos inteligentes para apoyo en QA/QC en flujos de trabajo empresariales.
 
 Este trabajo demuestra el potencial del NLP como herramienta clave para la transformación digital en procesos de aseguramiento de calidad en la industria ambiental y geoespacial.</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">20</td>
-              <td class="poster-presenter">Valentina Andrea Aravena Pérez</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>Which Prompting Technique for Argumentative Essay Scoring? A Unified Prompt Optimization Comparison</summary>
-                  <p class="poster-abstract">The comparison of prompting techniques for argumentative Automated Essay Scoring (AES) is hindered by manual prompt tuning, which makes the effect of the technique on prompt engineering imprecise. This work compares eight techniques—Zero-Shot, Few-Shot, and Chain-of-Thought (with and without a rubric), Self-Consistency, and Dual-Rater Adjudication (DRA), a proposed module—on the &quot;Exploring Venus&quot; prompt from ASAP-2.0, all optimized with MIPROv2 under the same metric and budget. The Quadratic Weighted Kappa varies between 0.39 and 0.49 across a 5-fold cross-validation: six techniques form a single statistically equivalent tier, and DRA achieved the highest observed mean (QWK = 0.49) in this setup. The QWK-cost Pareto analysis identifies three efficient techniques—Zero-Shot Rubric, Chain-of-Thought Rubric, and DRA—while Self-Consistency and Few-Shot are Pareto-dominated by cheaper alternatives. We highlight two findings: adding the official rubric to a Zero-Shot prompt raises the QWK from 0.39 to 0.47 with a lower token cost than the baseline without a rubric; and the different prompting mechanisms appear to behave as substitutes rather than being additive, sharing a performance ceiling that we term the structure saturation hypothesis. However, a preliminary analysis of a second argumentative prompt (Driverless cars) suggests that the benefit of the rubric depends on the prompt-rubric fit: the baseline gain is preserved, but the combined effects degrade. The results should be interpreted as conditional on the experimental setup, rather than as universal rankings.</p>
                 </details>
               </td>
             </tr>
