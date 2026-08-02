@@ -742,6 +742,22 @@ This work extends the investigation to the Qom↔Spanish pair. Qom is a Guaycuru
             </tr>
             <tr>
               <td class="poster-order">4</td>
+              <td class="poster-presenter">Tomás Schmidt</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Transformers guiados por atención humana: integración de eye-tracking para mejorar el entrenamiento y el desempeño de modelos de lenguaje</summary>
+                  <p class="poster-abstract">En este trabajo exploré si las señales de lectura humana pueden ayudar a entrenar mejor modelos de lenguaje en español. Para eso usé datos de eye-tracking, como el tiempo de fijación en palabras y el recorrido de la mirada durante la lectura.
+
+Probé dos formas de incorporar esta información en un modelo tipo BERT en español : una rama auxiliar basada en scanpaths y una modificación de la atención del Transformer usando métricas de lectura . La idea fue analizar si estas señales cognitivas podían guiar al modelo y aportar información útil para tareas de NLP.
+
+Los resultados muestran que el modelo logra incorporar debilmente parte de esta señal durante el entrenamiento.
+
+Este poster esta basado en mi tesis de licenciatura.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">5</td>
               <td class="poster-presenter">Ignacio Giuliano Iannello</td>
               <td>
                 <details class="poster-title-details">
@@ -754,7 +770,7 @@ Bratti[1] presenta un modelo entrenado en LSA-T que reporta un BLEU-1 de ~9%.  T
               </td>
             </tr>
             <tr>
-              <td class="poster-order">5</td>
+              <td class="poster-order">6</td>
               <td class="poster-presenter">Tadeo Kaufmann</td>
               <td>
                 <details class="poster-title-details">
@@ -767,7 +783,7 @@ en rioplatense (8.940 instancias) construido sobre el corpus de eye-tracking Cue
               </td>
             </tr>
             <tr>
-              <td class="poster-order">6</td>
+              <td class="poster-order">7</td>
               <td class="poster-presenter">Juan Miguel Vásquez Aguilar</td>
               <td>
                 <details class="poster-title-details">
@@ -777,7 +793,7 @@ en rioplatense (8.940 instancias) construido sobre el corpus de eye-tracking Cue
               </td>
             </tr>
             <tr>
-              <td class="poster-order">7</td>
+              <td class="poster-order">8</td>
               <td class="poster-presenter">Nicolás Rubinstein</td>
               <td>
                 <details class="poster-title-details">
@@ -791,26 +807,12 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               </td>
             </tr>
             <tr>
-              <td class="poster-order">8</td>
+              <td class="poster-order">9</td>
               <td class="poster-presenter">Adrián Fernando Acarapi Roca</td>
               <td>
                 <details class="poster-title-details">
                   <summary>Evaluación dinámica de una arquitectura multi agentes bajo logica difusa</summary>
                   <p class="poster-abstract">El presente trabajo busca evaluar y modelar matemáticamente el uso eficiente de comunicación entre agentes para la segregación óptima de responsabilidades, entre una arquitectura on premise y modelos corriendo en la nube para determinar la eficacia de un cambio dinámico de responsabilidades bajo la lógica difusa</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">9</td>
-              <td class="poster-presenter">Lesly Zerna</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>Optimización de Agentes basados en Modelos Abiertos: Un caso de estudio con Gemma</summary>
-                  <p class="poster-abstract">El despliegue de sistemas basados en agentes de Procesamiento del Lenguaje Natural (PLN) en entornos de producción enfrenta desafíos críticos de ingeniería que rara vez se abordan en la literatura introductoria: la latencia de inferencia, la acumulación de estado en el contexto y las restricciones en el manejo de dependencias de texto estructurado.
-
-Este trabajo presenta un estudio de caso práctico centrado en el diseño y la optimización de un sistema multi-agente utilizando la familia de modelos lingüísticos abiertos Gemma. Evaluamos el impacto de diferentes patrones de orquestación y arquitecturas de enrutamiento sobre el tiempo de respuesta y la eficiencia en el consumo de tokens en tareas complejas de procesamiento de texto. Adicionalmente, analizamos estrategias de gestión de estado mediante la compresión y poda del historial de conversación para mitigar la saturación del contexto.
-
-El objetivo es demostrar cómo la transición de prototipos educativos a arquitecturas robustas de PLN puede lograrse utilizando modelos de código abierto viables, locales y eficientes, proporcionando un marco de referencia reproducible y de bajo costo para desarrolladores e investigadores de la región.</p>
                 </details>
               </td>
             </tr>
@@ -851,6 +853,20 @@ El objetivo es demostrar cómo la transición de prototipos educativos a arquite
                 <details class="poster-title-details">
                   <summary>Activación Endógena mediante Homeostasis Epistémica en Sistemas Multi-Agente Basados en LLMs</summary>
                   <p class="poster-abstract">Los sistemas multi-agente basados en modelos de lenguaje (LLMs) tienden a perder coherencia a medida que la interacción se extiende, un fenómeno conocido como colapso de contexto que, en entornos de debate rebatible, invalida el debate. Los marcos de trabajo contemporáneos (como AutoGen, MetaGPT o LangGraph) mantienen una activación exógena: el momento en que habla cada agente se decide por fuera de su estado interno, desacoplando la activación de la presión epistémica que el agente acumula. La biología sugiere una alternativa: las variables internas acumulan tensión, gatillan una respuesta y regresan al equilibrio sin una instrucción externa (homeostasis). En este trabajo presentamos una estrategia de orquestación endógena bio-inspirada donde cada agente gestiona un déficit epistémico interno ($\delta_i$) que aumenta de forma constante durante los periodos de inactividad y se reduce inmediatamente después de realizar una contribución lingüística útil; una función sigmoide transforma esta tensión en una probabilidad de acción. Formalizamos este marco a través de los Axiomas de Autonomía Homeostática (AAH) y presentamos un diseño experimental orientado a aislar el comportamiento del modelo puramente homeostático frente a ruteadores tradicionales de LangGraph en debates de texto. Nuestros resultados preliminares muestran que la activación endógena pura logra mitigar la monopolización del piso conversacional, distribuyendo los turnos de habla de manera orgánica sin requerir las complejidades asociadas a mecanismos de aprendizaje por refuerzo.</p>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td class="poster-order">14</td>
+              <td class="poster-presenter">Lesly Zerna</td>
+              <td>
+                <details class="poster-title-details">
+                  <summary>Optimización de Agentes basados en Modelos Abiertos: Un caso de estudio con Gemma</summary>
+                  <p class="poster-abstract">El despliegue de sistemas basados en agentes de Procesamiento del Lenguaje Natural (PLN) en entornos de producción enfrenta desafíos críticos de ingeniería que rara vez se abordan en la literatura introductoria: la latencia de inferencia, la acumulación de estado en el contexto y las restricciones en el manejo de dependencias de texto estructurado.
+
+Este trabajo presenta un estudio de caso práctico centrado en el diseño y la optimización de un sistema multi-agente utilizando la familia de modelos lingüísticos abiertos Gemma. Evaluamos el impacto de diferentes patrones de orquestación y arquitecturas de enrutamiento sobre el tiempo de respuesta y la eficiencia en el consumo de tokens en tareas complejas de procesamiento de texto. Adicionalmente, analizamos estrategias de gestión de estado mediante la compresión y poda del historial de conversación para mitigar la saturación del contexto.
+
+El objetivo es demostrar cómo la transición de prototipos educativos a arquitecturas robustas de PLN puede lograrse utilizando modelos de código abierto viables, locales y eficientes, proporcionando un marco de referencia reproducible y de bajo costo para desarrolladores e investigadores de la región.</p>
                 </details>
               </td>
             </tr>
@@ -923,22 +939,6 @@ El objetivo es demostrar cómo la transición de prototipos educativos a arquite
             </tr>
             <tr>
               <td class="poster-order">6</td>
-              <td class="poster-presenter">Tomás Schmidt</td>
-              <td>
-                <details class="poster-title-details">
-                  <summary>Transformers guiados por atención humana: integración de eye-tracking para mejorar el entrenamiento y el desempeño de modelos de lenguaje</summary>
-                  <p class="poster-abstract">En este trabajo exploré si las señales de lectura humana pueden ayudar a entrenar mejor modelos de lenguaje en español. Para eso usé datos de eye-tracking, como el tiempo de fijación en palabras y el recorrido de la mirada durante la lectura.
-
-Probé dos formas de incorporar esta información en un modelo tipo BERT en español : una rama auxiliar basada en scanpaths y una modificación de la atención del Transformer usando métricas de lectura . La idea fue analizar si estas señales cognitivas podían guiar al modelo y aportar información útil para tareas de NLP.
-
-Los resultados muestran que el modelo logra incorporar debilmente parte de esta señal durante el entrenamiento.
-
-Este poster esta basado en mi tesis de licenciatura.</p>
-                </details>
-              </td>
-            </tr>
-            <tr>
-              <td class="poster-order">7</td>
               <td class="poster-presenter">Juan Pablo Muñoz</td>
               <td>
                 <details class="poster-title-details">
@@ -948,7 +948,7 @@ Este poster esta basado en mi tesis de licenciatura.</p>
               </td>
             </tr>
             <tr>
-              <td class="poster-order">8</td>
+              <td class="poster-order">7</td>
               <td class="poster-presenter">Juan Manuel Fernández</td>
               <td>
                 <details class="poster-title-details">
@@ -964,7 +964,7 @@ The results show that LoRA achieves competitive performance compared to full fin
               </td>
             </tr>
             <tr>
-              <td class="poster-order">9</td>
+              <td class="poster-order">8</td>
               <td class="poster-presenter">Nicole Tatiana Parra Valverde</td>
               <td>
                 <details class="poster-title-details">
@@ -978,7 +978,7 @@ El objetivo principal no es construir un sistema de gran escala, sino identifica
               </td>
             </tr>
             <tr>
-              <td class="poster-order">10</td>
+              <td class="poster-order">9</td>
               <td class="poster-presenter">Tamara Quiroga Curin</td>
               <td>
                 <details class="poster-title-details">
@@ -988,7 +988,7 @@ El objetivo principal no es construir un sistema de gran escala, sino identifica
               </td>
             </tr>
             <tr>
-              <td class="poster-order">11</td>
+              <td class="poster-order">10</td>
               <td class="poster-presenter">Sebastián Pinto</td>
               <td>
                 <details class="poster-title-details">
@@ -998,7 +998,7 @@ El objetivo principal no es construir un sistema de gran escala, sino identifica
               </td>
             </tr>
             <tr>
-              <td class="poster-order">12</td>
+              <td class="poster-order">11</td>
               <td class="poster-presenter">Julieta Paola Storino</td>
               <td>
                 <details class="poster-title-details">
@@ -1010,7 +1010,7 @@ En este trabajo se revisa la evolución de las arquitecturas basadas en Transfor
               </td>
             </tr>
             <tr>
-              <td class="poster-order">13</td>
+              <td class="poster-order">12</td>
               <td class="poster-presenter">Gonzalo Vidal Bazterrica</td>
               <td>
                 <details class="poster-title-details">
@@ -1020,7 +1020,7 @@ En este trabajo se revisa la evolución de las arquitecturas basadas en Transfor
               </td>
             </tr>
             <tr>
-              <td class="poster-order">14</td>
+              <td class="poster-order">13</td>
               <td class="poster-presenter">Felipe Meza-Obando</td>
               <td>
                 <details class="poster-title-details">
@@ -1030,7 +1030,7 @@ En este trabajo se revisa la evolución de las arquitecturas basadas en Transfor
               </td>
             </tr>
             <tr>
-              <td class="poster-order">15</td>
+              <td class="poster-order">14</td>
               <td class="poster-presenter">Iv&aacute;n Agust&iacute;n Bravo<br>Mariano Demar&iacute;a</td>
               <td>
                 <details class="poster-title-details">
@@ -1040,7 +1040,7 @@ En este trabajo se revisa la evolución de las arquitecturas basadas en Transfor
               </td>
             </tr>
             <tr>
-              <td class="poster-order">16</td>
+              <td class="poster-order">15</td>
               <td class="poster-presenter">Luis Eduardo Ferrer Cruz</td>
               <td>
                 <details class="poster-title-details">
