@@ -520,6 +520,58 @@
       white-space: pre-line;
     }
 
+    .event-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .event-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+    }
+
+    .event-gallery .event-photo-featured {
+      grid-column: 1 / -1;
+    }
+
+    .event-gallery a {
+      display: block;
+      background: #f7f7f7;
+    }
+
+    .event-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+
+    .event-gallery .event-photo-featured img {
+      aspect-ratio: 4000 / 1848;
+    }
+
+    .event-gallery figcaption {
+      padding: 10px 14px;
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 600px) {
+      .event-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .event-gallery .event-photo-featured {
+        grid-column: auto;
+      }
+    }
+
     footer {
       border-top: 1px solid #dddddd;
       padding: 30px;
@@ -542,6 +594,7 @@
       <a href="#registration">Registration</a>
       <a href="#schedule">Schedule</a>
       <a href="#posters">Poster Sessions</a>
+      <a href="#photos">Event Photos</a>
       <a href="#past">Past Editions</a>
     </nav>
 
@@ -1340,6 +1393,37 @@ El objetivo es demostrar cómo la transición de prototipos educativos a arquite
   </p>
 
 </section>
+
+    <section id="photos">
+
+      <h2>Event Photos</h2>
+
+      <p>A few moments from the Second South American NLP School.</p>
+
+      <div class="event-gallery">
+        <figure class="event-photo-featured">
+          <a href="grupal_foto_NLP.jpeg" aria-label="Open the full-size group photo">
+            <img src="event-photos/group-photo.jpg" alt="Participants at the Second South American NLP School" width="2000" height="924" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Participants at the Second South American NLP School</figcaption>
+        </figure>
+
+        <figure>
+          <a href="labo_NLP.jpg" aria-label="Open the full-size computer lab photo">
+            <img src="event-photos/computer-lab.jpg" alt="Participants working together in the computer lab" width="1200" height="800" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Hands-on session in the computer lab</figcaption>
+        </figure>
+
+        <figure>
+          <a href="comiendo_NLP.jpg" aria-label="Open the full-size lunch break photo">
+            <img src="event-photos/lunch-break.jpg" alt="Participants talking during a lunch break" width="1200" height="800" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Conversations during a lunch break</figcaption>
+        </figure>
+      </div>
+
+    </section>
 
     <section id="past">
 
