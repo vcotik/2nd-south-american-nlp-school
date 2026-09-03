@@ -434,6 +434,19 @@
       font-weight: normal;
     }
 
+    .poster-download {
+      display: inline-block;
+      margin-left: 0.55rem;
+      color: #0f766e;
+      font-size: 0.9em;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .poster-download:hover {
+      color: #115e59;
+    }
+
     .poster-abstract {
       margin-top: 8px;
       color: #444;
@@ -718,7 +731,7 @@
               <td class="poster-presenter">Paola Cúneo</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Lengua qom: Creación de un corpus de habla y de texto paralelo, sus aplicaciones y evaluación</summary>
+                  <summary>Lengua qom: Creación de un corpus de habla y de texto paralelo, sus aplicaciones y evaluación <a class="poster-download" href="posters/paola-cuneo-corpus-qom.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Las lenguas indígenas constituyen un componente fundamental del entramado cultural y lingüístico de las comunidades que las hablan y de nuestro país. Sin embargo, muchas de estas lenguas enfrentan procesos de desplazamiento lingüístico y una limitada disponibilidad de recursos digitales que contribuyan a su documentación y fortalecimiento. En este contexto, la construcción de corpus lingüísticos digitales representa una herramienta valiosa tanto para potenciar el estudio de estas lenguas como para desarrollar tecnologías del lenguaje. 
 
 En este trabajo presentamos los avances en la construcción de un corpus de habla y texto en lengua qom, orientado al desarrollo de recursos y tecnologías que contribuyan a su uso, fortalecimiento y continuidad. En su estado actual, el corpus reúne aproximadamente 5 horas de grabaciones de habla de alta calidad, de las cuales 3 horas han sido transcriptas en qom y traducidas al español. Asimismo, presenta una amplia diversidad sociolingüística en términos de género, edad, variedad dialectal, así como de géneros discursivos y estilos de habla. Se describen las características del corpus y la metodología empleada para la recolección y anotación de los datos, incluida la labor colaborativa desarrollada junto con la comunidad indígena. Finalmente, se analizan los principales desafíos enfrentados durante el proceso y las perspectivas de utilización del corpus en futuras aplicaciones de procesamiento del lenguaje natural y tecnologías del habla.</p>
@@ -730,7 +743,7 @@ En este trabajo presentamos los avances en la construcción de un corpus de habl
               <td class="poster-presenter">Macarena Fernandez Urquiza</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Evaluation Metrics for Qom↔Spanish Machine Translation: Baselines, Limitations, and a Roadmap</summary>
+                  <summary>Evaluation Metrics for Qom↔Spanish Machine Translation: Baselines, Limitations, and a Roadmap <a class="poster-download" href="posters/macarena-fernandez-urquiza.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Evaluating machine translation for low-resource Indigenous languages poses challenges that standard n-gram-based metrics are not designed to handle: polysynthetic morphology, non-standardized orthography, and scarce digital resources. The first shared task on translation metrics for Indigenous languages, held at the AmericasNLP 2025 workshop, showed that ChrF++—the current standard—correlates poorly with human judgments for these languages (average Pearson correlation ~0.52 across three languages), while the best neural approaches reach ~0.67, revealing both the potential and the limitations of existing methods.
 This work extends the investigation to the Qom↔Spanish pair. Qom is a Guaycuruan polysynthetic language of northern Argentina with orthographic variation and still-emerging digital resources. An existing translation model (fine-tuned NLLB) is evaluated using n-gram metrics (BLEU, ChrF++) and pretrained multilingual embedding-based metrics (BERTScore, MoverScore), and cases where metrics diverge from actual translation quality are qualitatively analyzed. Building on these findings, an annotation guideline is proposed, adapted to the linguistic and sociocultural specificities of Qom—following the semantics/fluency evaluation methodology of the AmericasNLP shared task 3 —alongside a roadmap toward embedding-based metrics trained on the Qom-Spanish pair.</p>
                 </details>
@@ -741,7 +754,7 @@ This work extends the investigation to the Qom↔Spanish pair. Qom is a Guaycuru
               <td class="poster-presenter">Ignacio Giuliano Iannello</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Evaluación de la Comprensión Semántica en la traducción de LSA-T</summary>
+                  <summary>Evaluación de la Comprensión Semántica en la traducción de LSA-T <a class="poster-download" href="posters/ignacio-iannello.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">El Lenguaje de Señas Argentino (LSA) tiene características que lo diferencian de otros lenguajes de señas como el lenguajes de señas americano (ASL) o el lenguaje de señas chino (CSL) las cuales tienen diferencias tanto en el significado de diferentes gestos como tambien asi en su estructura gramatical (El LSA utiliza Objeto-Sujeto-Verbo mientras que ASL usa Sujeto-Verbo-Objeto). En nuestro país alrededor de 70.000 personas se comunican a través del lenguaje de señas. Esto es un indicador de la importancia de adaptar o generar instrumentos que puedan ser traducidos satisfactoriamente.
 Bratti[1] presenta un modelo entrenado en LSA-T que reporta un BLEU-1 de ~9%.  Testa et al. [2] pusieron a disposición  un pipeline automático para generar un benchmark que evalúa para los datasets PHOENIX y CSL-Daily. El poster propuesto mostrará los resultados de reproducir el pipeline propuesto por [2] para un modelo entrenado en LSA-T, centrado en la evaluación de la precisión de Comprensión de Lenguaje de Señas (Sign Language Understanding).
 [1] Bratti, Juan “Traducción de secuencias de la lengua de señas argentina mediante visión por computadora”, Tesis de grado, FAMAF, UNC. Dic 2025,  https://rdu.unc.edu.ar/items/26462320-e56d-40f2-a4cf-877bc67be5d7
@@ -754,7 +767,7 @@ Bratti[1] presenta un modelo entrenado en LSA-T que reporta un BLEU-1 de ~9%.  T
               <td class="poster-presenter">Tomás Schmidt</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Transformers guiados por atención humana: integración de eye-tracking para mejorar el entrenamiento y el desempeño de modelos de lenguaje</summary>
+                  <summary>Transformers guiados por atención humana: integración de eye-tracking para mejorar el entrenamiento y el desempeño de modelos de lenguaje <a class="poster-download" href="posters/tomas-schmidt.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">En este trabajo exploré si las señales de lectura humana pueden ayudar a entrenar mejor modelos de lenguaje en español. Para eso usé datos de eye-tracking, como el tiempo de fijación en palabras y el recorrido de la mirada durante la lectura.
 
 Probé dos formas de incorporar esta información en un modelo tipo BERT en español : una rama auxiliar basada en scanpaths y una modificación de la atención del Transformer usando métricas de lectura . La idea fue analizar si estas señales cognitivas podían guiar al modelo y aportar información útil para tareas de NLP.
@@ -770,7 +783,7 @@ Este poster esta basado en mi tesis de licenciatura.</p>
               <td class="poster-presenter">Tadeo Kaufmann</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>De España al Río de la Plata: brecha dialectal y benchmarks NLU para el español rioplatense</summary>
+                  <summary>De España al Río de la Plata: brecha dialectal y benchmarks NLU para el español rioplatense <a class="poster-download" href="posters/tadeo-kaufmann.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">El español rioplatense, hablado por más de 45 millones de personas en Argentina y Uruguay, está prácticamente ausente de los benchmarks de comprensión del lenguaje natural. Los modelos entrenados en español estándar peninsular no han sido evaluados sistemáticamente en esta variedad, y la evidencia sugiere que la distancia dialectal tiene costos reales en rendimiento.
 
 Presento dos contribuciones: XNLIrp, la primera adaptación del benchmark XNLI al español rioplatense (7.500 instancias,validadas por 339 anotadores nativos con 84,2% de aprobación), y QA-Cuentos ET, el primer dataset de selección de oraciones respuesta
@@ -793,7 +806,7 @@ en rioplatense (8.940 instancias) construido sobre el corpus de eye-tracking Cue
               <td class="poster-presenter">Nicolás Rubinstein</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Nexo-Memoria: un grafo de conocimiento para la Memoria, Verdad y Justicia</summary>
+                  <summary>Nexo-Memoria: un grafo de conocimiento para la Memoria, Verdad y Justicia <a class="poster-download" href="posters/nicolas-rubinstein.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Se trata de un grafo de conocimiento que modela información extraída de sentencias judiciales por crímenes de lesa humanidad cometidos durante la última dictadura cívico-militar en Argentina (1976–1983). La información se extrae mediante un pipeline de extracción con LLMs y componentes determinísticos en múltiples pasos.
 
 El dominio presenta desafíos específicos para el NLP: normalización de expresiones temporales y espaciales imprecisas en español, resolución de entidades y coreferencia cross-documento, extracción de información en textos jurídicos extensos, y confiabilidad de las extracciones con trazabilidad a la fuente.
@@ -807,7 +820,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               <td class="poster-presenter">Adrián Fernando Acarapi Roca</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Evaluación dinámica de una arquitectura multi agentes bajo logica difusa</summary>
+                  <summary>Evaluación dinámica de una arquitectura multi agentes bajo logica difusa <a class="poster-download" href="posters/adrian-acarapi.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">El presente trabajo busca evaluar y modelar matemáticamente el uso eficiente de comunicación entre agentes para la segregación óptima de responsabilidades, entre una arquitectura on premise y modelos corriendo en la nube para determinar la eficacia de un cambio dinámico de responsabilidades bajo la lógica difusa</p>
                 </details>
               </td>
@@ -817,7 +830,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               <td class="poster-presenter">Favio Di Ciocco</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Propagation of correlated rumors in a threshold model</summary>
+                  <summary>Propagation of correlated rumors in a threshold model <a class="poster-download" href="posters/favio-di-ciocco.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Social media platforms bombard users with vast amounts of information, often exceeding individual cognitive processing capacities. In contexts where forming an informed opinion is costly, individuals tend to rely on social reinforcement, validating information only if it is confirmed by their local environment. In this work, we study the propagation of unverified information (rumors) in complex networks, focusing on a scenario with two competing rumors regarding a single topic: one positive and one negative. We introduce a mechanism where these rumors are correlated, such that the adoption of one facilitates the adoption of the other. However, since the rumors represent opposing views, agents who accept both encounter a state of cognitive dissonance. This conflict is eventually resolved by discarding both beliefs and adopting a stricter criterion (higher threshold) for accepting future information. Our model revealed two distinct parameter regions: one where a single rumor dominates, and another where most agents become skeptical. A proposed dynamical description, when integrated, showed similar behavior to the original model.</p>
                 </details>
               </td>
@@ -827,7 +840,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               <td class="poster-presenter">Giuliano Crenna</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>El indice V para la evaluación ecológica de los grandes modelos del lenguaje</summary>
+                  <summary>El indice V para la evaluación ecológica de los grandes modelos del lenguaje <a class="poster-download" href="posters/giuliano-crenna.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">El poster trata sobre el desarrollo de un indicador para evaluar integralmente el impacto ecológico en la fase de decoding de un modelo del lenguaje.</p>
                 </details>
               </td>
@@ -837,7 +850,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               <td class="poster-presenter">Eric Lützow Holm</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Casa o árbol: una propuesta lúdica para acercarse al NLP</summary>
+                  <summary>Casa o árbol: una propuesta lúdica para acercarse al NLP <a class="poster-download" href="posters/eric-lutzow-holm.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">En este trabajo presentamos “Casa o árbol”, una actividad lúdica diseñada para introducir de forma intuitiva y visual los conceptos de embeddings y distancia semántica en estudiantes de último año de nivel secundario. El juego consiste en juntarse en grupos y adivinar una palabra secreta mediante una cadena secuencial de opciones binarias (ej. de &quot;casa o árbol&quot; a &quot;árbol o gato&quot; hasta aproximarse al objetivo). Utilizando los datos recolectados por los propios alumnos en un formulario online, programamos en vivo para mapear las partidas computando los embeddings de las palabras jugadas. Esto nos permite generar gráficos que muestran cómo la distancia semántica tiende a decrecer a lo largo de los turnos. Asimismo, analizamos el impacto del priming léxico mediante la lectura de un cuento corto previo al juego, evidenciando estadísticamente cómo las palabras de ese texto condicionan el vocabulario de los estudiantes empleado en las partidas.</p>
                 </details>
               </td>
@@ -847,7 +860,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               <td class="poster-presenter">Patricio Gerpe</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Activación Endógena mediante Homeostasis Epistémica en Sistemas Multi-Agente Basados en LLMs</summary>
+                  <summary>Activación Endógena mediante Homeostasis Epistémica en Sistemas Multi-Agente Basados en LLMs <a class="poster-download" href="posters/patricio-gerpe.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Los sistemas multi-agente basados en modelos de lenguaje (LLMs) tienden a perder coherencia a medida que la interacción se extiende, un fenómeno conocido como colapso de contexto que, en entornos de debate rebatible, invalida el debate. Los marcos de trabajo contemporáneos (como AutoGen, MetaGPT o LangGraph) mantienen una activación exógena: el momento en que habla cada agente se decide por fuera de su estado interno, desacoplando la activación de la presión epistémica que el agente acumula. La biología sugiere una alternativa: las variables internas acumulan tensión, gatillan una respuesta y regresan al equilibrio sin una instrucción externa (homeostasis). En este trabajo presentamos una estrategia de orquestación endógena bio-inspirada donde cada agente gestiona un déficit epistémico interno ($\delta_i$) que aumenta de forma constante durante los periodos de inactividad y se reduce inmediatamente después de realizar una contribución lingüística útil; una función sigmoide transforma esta tensión en una probabilidad de acción. Formalizamos este marco a través de los Axiomas de Autonomía Homeostática (AAH) y presentamos un diseño experimental orientado a aislar el comportamiento del modelo puramente homeostático frente a ruteadores tradicionales de LangGraph en debates de texto. Nuestros resultados preliminares muestran que la activación endógena pura logra mitigar la monopolización del piso conversacional, distribuyendo los turnos de habla de manera orgánica sin requerir las complejidades asociadas a mecanismos de aprendizaje por refuerzo.</p>
                 </details>
               </td>
@@ -884,7 +897,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               <td class="poster-presenter">Sofía Martinelli</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Tensions Between Biomedical Ethics Review and Responsible AI Research at a University Hospital in South America</summary>
+                  <summary>Tensions Between Biomedical Ethics Review and Responsible AI Research at a University Hospital in South America <a class="poster-download" href="posters/sofia-martinelli.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">This paper analyzes ethical and technical challenges of implementing Responsible LLMs in clinical settings, drawing on an ongoing interdisciplinary project in Uruguay. The project is being developed within the Centro Interdisciplinario en Ciencia de Datos y Aprendizaje Automático (CICADA, Universidad de la República) in collaboration with the Hospital de Clínicas, Uruguay’s main university hospital. The regional research team draws on expertise from computer science, medicine, and the social sciences to address questions about fairness, inclusion, and gender bias in AI systems.</p>
                 </details>
               </td>
@@ -894,7 +907,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               <td class="poster-presenter">Margarita Ruiz Olazar</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Clasificación Automática de Diagnósticos de Salud Mental en Texto Clínico Libre mediante RigoBERTa Clinical: Depresión vs Ansiedad</summary>
+                  <summary>Clasificación Automática de Diagnósticos de Salud Mental en Texto Clínico Libre mediante RigoBERTa Clinical: Depresión vs Ansiedad <a class="poster-download" href="posters/margarita-ruiz-olazar.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">En salud mental, las condiciones como la depresión y la ansiedad son las más prevalentes y representan un gran desafío para los sistemas de salud pública a nivel mundial. Actualmente, con el avance de la tecnología en muchas instituciones de salud, el registro electrónico (EHR) de las consultas clínicas se realiza en formato de texto narrativo. Esta tecnología resulta relevante para obtener información sobre los pacientes, las estrategias de tratamiento y su evolución clínica a lo largo del tiempo. A pesar de ello, estas historias clínicas siguen siendo un recurso poco utilizado para la investigación sistemática y el análisis de datos secundarios. En este trabajo presentamos un sistema de clasificación de diagnósticos de depresión y ansiedad a partir de relatos clínicos en texto libre, basado en el fine-tuning de RigoBERTa Clinical (PlanTL-GOB-ES/roberta-base-biomedical-clinical-es), un modelo RoBERTa preentrenado sobre un corpus biomédico y clínico en español. El estudio utiliza dos fuentes de datos de un servicio de salud mental de Paraguay: un dataset de consultas longitudinales (2021–2025, N &gt; 1835) con relatos clínicos en texto libre, y un conjunto de diagnósticos anotados por profesionales de la salud (depresión / ansiedad) empleado como ground truth para el entrenamiento supervisado. Como paso previo, se implementó un pipeline de anonimización automática del texto mediante modelos de lenguaje ejecutados localmente, sin enviar datos a servicios externos, lo que garantiza el cumplimiento de la Ley de Protección de Datos Personales. El modelo fine-tuneado alcanzó una accuracy de 80,93%, un AUC-ROC de 0,86 y un F1-score macro de 0,78, superando al baseline basado en reglas léxicas. El análisis por clase reveló una asimetría en el desempeño: mientras que la clase depresión obtuvo un F1 de 0,86, la clase ansiedad alcanzó un F1 de 0,70, lo que refleja el desbalance del dataset (256 vs 111 casos en el conjunto de evaluación) y la mayor ambigüedad lingüística de los relatos de ansiedad. Estos resultados demuestran la viabilidad de aplicar modelos de lenguaje clínico en español a datos reales de salud mental.</p>
                 </details>
               </td>
@@ -904,7 +917,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               <td class="poster-presenter">Angela Lama Vargas</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Clasificación de estados cerebrales mediante características basadas en grafos extraídas de conectividad funcional EEG</summary>
+                  <summary>Clasificación de estados cerebrales mediante características basadas en grafos extraídas de conectividad funcional EEG <a class="poster-download" href="posters/angela-lama-vargas.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Este estudio investiga el uso de características basadas en grafos extraídas de redes de conectividad funcional obtenidas a partir de señales EEG para la clasificación de estados cerebrales. Las redes de conectividad funcional se construyeron a partir de registros EEG en condiciones de ojos abiertos y ojos cerrados utilizando correlación de Pearson y fueron representadas como grafos. Se extrajeron diversas métricas topológicas que posteriormente se emplearon como variables de entrada para modelos de aprendizaje automático. Los resultados experimentales mostraron que las características basadas en grafos contienen información discriminativa para la clasificación de estados cerebrales. Los hallazgos sugieren que la asortatividad podría constituir un marcador sensible de la modulación asociada al estado ocular y que los clasificadores Random Forest basados en características de grafos pueden alcanzar un desempeño moderado en tareas de clasificación.</p>
                 </details>
               </td>
@@ -934,7 +947,7 @@ La solución se apoya en una ontología propia diseñada para ser interoperable 
               <td class="poster-presenter">Juan Manuel Fernández</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Performance vs. Efficiency in Domain-Specific LLM Adaptation: A Comparative Study of Full Fine-Tuning and LoRA on Real-World Data</summary>
+                  <summary>Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore <a class="poster-download" href="posters/juan-manuel-fernandez.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Large Language Models (LLMs) have demonstrated strong performance across a wide range of natural language processing tasks; however, their adaptation to domain-specific settings remains challenging, particularly under constrained computational resources. In this work, we analyze the trade-off between adaptation quality and computational cost by comparing three strategies: a base model without adaptation, Full Fine-Tuning (FFT), and Low-Rank Adaptation (LoRA), a parameter-efficient fine-tuning technique.
 
 The evaluation is conducted on a document classification task built from a subset of the SEDICI institutional repository, reflecting real-world characteristics such as class imbalance and heterogeneous document structures. The task is formulated as an instruction-based generative classification problem, allowing us to assess adaptation capabilities without introducing additional classification layers.
@@ -950,7 +963,7 @@ The results show that LoRA achieves competitive performance compared to full fin
               <td class="poster-presenter">Nicole Tatiana Parra Valverde</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Diseño arquitectónico mínimo para sistemas RAG observables en español latinoamericano</summary>
+                  <summary>Diseño arquitectónico mínimo para sistemas RAG observables en español latinoamericano <a class="poster-download" href="posters/nicole-parra.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Este póster presenta una propuesta exploratoria sobre el diseño arquitectónico de sistemas de generación aumentada por recuperación (RAG) aplicados a documentos en español latinoamericano. El trabajo busca analizar cómo estructurar un pipeline mínimo que permita cargar documentos, dividirlos en fragmentos, generar representaciones vectoriales, recuperar contexto relevante y producir respuestas basadas en fuentes. 
 
 Además, se plantea incorporar mecanismos básicos de observabilidad para registrar información clave del proceso, como la consulta realizada, los fragmentos recuperados, la respuesta generada, el tiempo de ejecución y la presencia de citas o de evidencias. La propuesta se enfoca en una versión pequeña y reproducible, pensada para explorar buenas prácticas de arquitectura y diseño de software en aplicaciones de PLN con modelos de lenguaje. 
@@ -964,7 +977,7 @@ El objetivo principal no es construir un sistema de gran escala, sino identifica
               <td class="poster-presenter">Tamara Quiroga Curin</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>adapting bias evaluation to domain contexts using generative models</summary>
+                  <summary>adapting bias evaluation to domain contexts using generative models <a class="poster-download" href="posters/tamara-quiroga.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Numerous datasets have been proposed to evaluate social bias in Natural Language Processing (NLP) systems. However, assessing bias within specific application domains remains challenging, as existing approaches often face limitations in scalability and fidelity across domains. In this work, we introduce a domain-adaptive framework that utilizes prompting with Large Language Models (LLMs) to automatically transform template-based bias datasets into domain-specific variants. We apply our method to two widely used benchmarks—Equity Evaluation Corpus (EEC) and Identity Phrase Templates Test Set (IPTTS)—adapting them to the Twitter and Wikipedia Talk data. Our results show that the adapted datasets yield bias estimates more closely aligned with real-world data. These findings highlight the potential of LLM-based prompting to enhance the realism and contextual relevance of bias evaluation in NLP systems.</p>
                 </details>
               </td>
@@ -974,7 +987,7 @@ El objetivo principal no es construir un sistema de gran escala, sino identifica
               <td class="poster-presenter">Sebastián Pinto</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Marco teórico para analizar sesgo ideológico a partir de análisis de sentimiento</summary>
+                  <summary>Marco teórico para analizar sesgo ideológico a partir de análisis de sentimiento <a class="poster-download" href="posters/sebastian-pinto.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">La cuantificación del sesgo ideológico de manera rigurosa e interpretable constituye un desafío central en el estudio del discurso público. En este trabajo presentamos un marco basado en máxima entropía para inferir las posiciones ideológicas de medios de comunicación y figuras políticas. El método parte de analizar cómo cada medio menciona a cada figura política, clasificando esas menciones como positivas, neutras o negativas, para luego deducir el posicionamiento ideológico de ambos. Aplicamos este enfoque a publicaciones de Facebook relacionadas con las elecciones presidenciales de Estados Unidos 2024 y Argentina 2023. En ambos casos, las posiciones inferidas muestran una fuerte concordancia con clasificaciones externas e independientes de sesgo mediático. Una ventaja clave del método es que no requiere ningún conocimiento previo sobre la orientación ideológica de los actores y se basa únicamente en los patrones de sentimiento observados en los datos.</p>
                 </details>
               </td>
@@ -1016,7 +1029,7 @@ En este trabajo se revisa la evolución de las arquitecturas basadas en Transfor
               <td class="poster-presenter">Iv&aacute;n Agust&iacute;n Bravo<br>Mariano Demar&iacute;a</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>The Evolution of Thinking</summary>
+                  <summary>The Evolution of Thinking <a class="poster-download" href="posters/ivan-bravo-mariano-demaria.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">En la búsqueda de resolver problemas con Modelos de Lenguaje, surge la pregunta: ¿tienen comportamientos similares a los de un ser capaz de razonar? En este trabajo, se exploran métodos para estudiar su capacidad de generalización ante un problema típico, introduciendo una métrica para medir la complejidad a partir de la cual el desempeño del modelo se degrada de forma sustancial. Como línea de trabajo complementaria, se estudia la generación algorítmica de problemas a partir de semillas para evaluar si se presenta algún sesgo en las soluciones debido al entrenamiento del modelo.</p>
                 </details>
               </td>
@@ -1042,7 +1055,7 @@ Este trabajo demuestra el potencial del NLP como herramienta clave para la trans
               <td class="poster-presenter">Lesly Zerna</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Optimización de Agentes basados en Modelos Abiertos: Un caso de estudio con Gemma</summary>
+                  <summary>Optimización de Agentes basados en Modelos Abiertos: Un caso de estudio con Gemma <a class="poster-download" href="posters/lesly-zerna.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">El despliegue de sistemas basados en agentes de Procesamiento del Lenguaje Natural (PLN) en entornos de producción enfrenta desafíos críticos de ingeniería que rara vez se abordan en la literatura introductoria: la latencia de inferencia, la acumulación de estado en el contexto y las restricciones en el manejo de dependencias de texto estructurado.
 
 Este trabajo presenta un estudio de caso práctico centrado en el diseño y la optimización de un sistema multi-agente utilizando la familia de modelos lingüísticos abiertos Gemma. Evaluamos el impacto de diferentes patrones de orquestación y arquitecturas de enrutamiento sobre el tiempo de respuesta y la eficiencia en el consumo de tokens en tareas complejas de procesamiento de texto. Adicionalmente, analizamos estrategias de gestión de estado mediante la compresión y poda del historial de conversación para mitigar la saturación del contexto.
