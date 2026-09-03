@@ -375,6 +375,73 @@
       margin: auto;
     }
 
+    .award-intro {
+      max-width: 760px;
+    }
+
+    .award-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .award-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 22px;
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-top: 5px solid #b45309;
+      border-radius: 6px;
+      box-shadow: 0 5px 16px rgba(15, 23, 42, 0.07);
+    }
+
+    .award-card:first-child {
+      border-top-color: #d4a017;
+    }
+
+    .award-card:nth-child(2) {
+      border-top-color: #64748b;
+    }
+
+    .award-place {
+      margin-bottom: 12px;
+      color: #475569;
+      font-size: 0.78em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .award-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.16em;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .award-title {
+      margin: 0 0 18px;
+      color: #444;
+      font-style: italic;
+      overflow-wrap: anywhere;
+    }
+
+    .award-link {
+      align-self: flex-start;
+      margin-top: auto;
+      color: #0f766e;
+      font-weight: 600;
+    }
+
+    @media (max-width: 760px) {
+      .award-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .poster-day-details {
       margin-bottom: 20px;
       border: 1px solid #dddddd;
@@ -471,6 +538,7 @@
 
     <nav>
       <a href="#about">About</a>
+      <a href="#news">News</a>
       <a href="#registration">Registration</a>
       <a href="#schedule">Schedule</a>
       <a href="#posters">Poster Sessions</a>
@@ -481,7 +549,7 @@
 
 
   <div class="schedule-notice" role="status">
-    <a href="#schedule">The schedule is now available.</a> Click any talk or tutorial, then the speaker's name, to explore the details.<br>
+    <a href="#news">The 2026 poster award recipients have been announced.</a> Meet the authors and explore their work.
   </div>
 
   <div class="schedule-notice" role="status">
@@ -539,6 +607,39 @@
       
 
    
+
+    </section>
+
+    <section id="news">
+
+      <h2>Poster Awards 2026</h2>
+
+      <p class="award-intro">
+        We are delighted to announce the recipients of the poster awards presented at the Second South American NLP School. We congratulate the awardees and thank everyone who shared their work and contributed to two days of exchange across the regional NLP community.
+      </p>
+
+      <div class="award-list">
+        <article class="award-card">
+          <span class="award-place">First place</span>
+          <h3>Tamara Quiroga Curin</h3>
+          <p class="award-title">“Adapting Bias Evaluation to Domain Contexts Using Generative Models”</p>
+          <a class="award-link" href="posters/tamara-quiroga.pdf" target="_blank" rel="noopener noreferrer">View poster <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="award-card">
+          <span class="award-place">Second place</span>
+          <h3>Juan Manuel Fernández</h3>
+          <p class="award-title">“Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore”</p>
+          <a class="award-link" href="posters/juan-manuel-fernandez.pdf" target="_blank" rel="noopener noreferrer">View poster <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="award-card">
+          <span class="award-place">Third place (shared)</span>
+          <h3>Nicolás Rubinstein</h3>
+          <p class="award-title">“Nexo-Memoria: un grafo de conocimiento para la Memoria, Verdad y Justicia”</p>
+          <a class="award-link" href="posters/nicolas-rubinstein.pdf" target="_blank" rel="noopener noreferrer">View poster <span aria-hidden="true">&rarr;</span></a>
+        </article>
+      </div>
 
     </section>
 
@@ -977,7 +1078,7 @@ El objetivo principal no es construir un sistema de gran escala, sino identifica
               <td class="poster-presenter">Tamara Quiroga Curin</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>adapting bias evaluation to domain contexts using generative models <a class="poster-download" href="posters/tamara-quiroga.pdf" download>Link al póster</a></summary>
+                  <summary>Adapting Bias Evaluation to Domain Contexts Using Generative Models <a class="poster-download" href="posters/tamara-quiroga.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Numerous datasets have been proposed to evaluate social bias in Natural Language Processing (NLP) systems. However, assessing bias within specific application domains remains challenging, as existing approaches often face limitations in scalability and fidelity across domains. In this work, we introduce a domain-adaptive framework that utilizes prompting with Large Language Models (LLMs) to automatically transform template-based bias datasets into domain-specific variants. We apply our method to two widely used benchmarks—Equity Evaluation Corpus (EEC) and Identity Phrase Templates Test Set (IPTTS)—adapting them to the Twitter and Wikipedia Talk data. Our results show that the adapted datasets yield bias estimates more closely aligned with real-world data. These findings highlight the potential of LLM-based prompting to enhance the realism and contextual relevance of bias evaluation in NLP systems.</p>
                 </details>
               </td>
