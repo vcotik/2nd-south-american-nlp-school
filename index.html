@@ -381,7 +381,7 @@
 
     .award-list {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
       margin-top: 28px;
     }
@@ -416,16 +416,15 @@
     }
 
     .award-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.16em;
-      line-height: 1.35;
+      margin: 0 0 12px;
+      font-size: 1.08em;
+      line-height: 1.45;
       overflow-wrap: anywhere;
     }
 
-    .award-title {
+    .award-authors {
       margin: 0 0 18px;
       color: #444;
-      font-style: italic;
       overflow-wrap: anywhere;
     }
 
@@ -667,30 +666,39 @@
 
       <h2>Poster Awards 2026</h2>
 
-      <p class="award-intro">
-        We are delighted to announce the recipients of the poster awards presented at the Second South American NLP School. We congratulate the awardees and thank everyone who shared their work and contributed to two days of exchange across the regional NLP community.
-      </p>
+      <div class="award-intro">
+        <p>The winning posters from the Second South American NLP School have been announced.</p>
+        <p>The posters were evaluated and selected by a committee composed of Aiala Rosá, Santiago Góngora, and Gustavo Juantoarena. No other members of the School’s organizing team participated in the evaluation or selection process.</p>
+        <p>The authors of the winning posters will have the opportunity to publish their work in the Electronic Journal of SADIO. <a href="#winning-posters">Explore the winning posters.</a></p>
+      </div>
 
-      <div class="award-list">
+      <div class="award-list" id="winning-posters">
         <article class="award-card">
           <span class="award-place">First place</span>
-          <h3>Tamara Quiroga Curin</h3>
-          <p class="award-title">“Adapting Bias Evaluation to Domain Contexts Using Generative Models”</p>
+          <h3>Adapting Bias Evaluation to Domain Contexts Using Generative Models</h3>
+          <p class="award-authors"><strong>Authors:</strong> Tamara Quiroga Curin, Felipe Bravo-Marquez, and Valentín Barriere.</p>
           <a class="award-link" href="posters/tamara-quiroga.pdf" target="_blank" rel="noopener noreferrer">View poster <span aria-hidden="true">&rarr;</span></a>
         </article>
 
         <article class="award-card">
           <span class="award-place">Second place</span>
-          <h3>Juan Manuel Fernández</h3>
-          <p class="award-title">“Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore”</p>
+          <h3>Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore</h3>
+          <p class="award-authors"><strong>Authors:</strong> Malek Camilo, Juan Manuel Fernández, and Marcelo Errecalde.</p>
           <a class="award-link" href="posters/juan-manuel-fernandez.pdf" target="_blank" rel="noopener noreferrer">View poster <span aria-hidden="true">&rarr;</span></a>
         </article>
 
         <article class="award-card">
           <span class="award-place">Third place</span>
-          <h3>Nicolás Rubinstein</h3>
-          <p class="award-title">“Nexo-Memoria: un grafo de conocimiento para la Memoria, Verdad y Justicia”</p>
+          <h3>Nexo-Memoria: un grafo de conocimiento para la Memoria, Verdad y Justicia</h3>
+          <p class="award-authors"><strong>Authors:</strong> Nicolás Rubinstein, Carolina Villella, Edgar Altszyler, and Luciano Del Corro.</p>
           <a class="award-link" href="posters/nicolas-rubinstein.pdf" target="_blank" rel="noopener noreferrer">View poster <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="award-card">
+          <span class="award-place">Third place</span>
+          <h3>Lengua qom: Creación de un corpus de habla y de texto paralelo, aplicaciones y evaluación</h3>
+          <p class="award-authors"><strong>Authors:</strong> Christian Cossio-Mercado, Viviana Cotik, Paola Cúneo, Temis Tacconi, Macarena Fernández Urquiza, Aleksei Korablev, and Belu Ticona.</p>
+          <a class="award-link" href="posters/paola-cuneo-corpus-qom.pdf" target="_blank" rel="noopener noreferrer">View poster <span aria-hidden="true">&rarr;</span></a>
         </article>
       </div>
 
@@ -885,7 +893,7 @@
               <td class="poster-presenter">Paola Cúneo</td>
               <td>
                 <details class="poster-title-details">
-                  <summary>Lengua qom: Creación de un corpus de habla y de texto paralelo, sus aplicaciones y evaluación <a class="poster-download" href="posters/paola-cuneo-corpus-qom.pdf" download>Link al póster</a></summary>
+                  <summary>Lengua qom: Creación de un corpus de habla y de texto paralelo, aplicaciones y evaluación <a class="poster-download" href="posters/paola-cuneo-corpus-qom.pdf" download>Link al póster</a></summary>
                   <p class="poster-abstract">Las lenguas indígenas constituyen un componente fundamental del entramado cultural y lingüístico de las comunidades que las hablan y de nuestro país. Sin embargo, muchas de estas lenguas enfrentan procesos de desplazamiento lingüístico y una limitada disponibilidad de recursos digitales que contribuyan a su documentación y fortalecimiento. En este contexto, la construcción de corpus lingüísticos digitales representa una herramienta valiosa tanto para potenciar el estudio de estas lenguas como para desarrollar tecnologías del lenguaje. 
 
 En este trabajo presentamos los avances en la construcción de un corpus de habla y texto en lengua qom, orientado al desarrollo de recursos y tecnologías que contribuyan a su uso, fortalecimiento y continuidad. En su estado actual, el corpus reúne aproximadamente 5 horas de grabaciones de habla de alta calidad, de las cuales 3 horas han sido transcriptas en qom y traducidas al español. Asimismo, presenta una amplia diversidad sociolingüística en términos de género, edad, variedad dialectal, así como de géneros discursivos y estilos de habla. Se describen las características del corpus y la metodología empleada para la recolección y anotación de los datos, incluida la labor colaborativa desarrollada junto con la comunidad indígena. Finalmente, se analizan los principales desafíos enfrentados durante el proceso y las perspectivas de utilización del corpus en futuras aplicaciones de procesamiento del lenguaje natural y tecnologías del habla.</p>
